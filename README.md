@@ -13,9 +13,9 @@ We are incredibly grateful to our sponsors for their continued support in making
 Without the contributions from these amazing sponsors, WebKnoGraph would not have been possible. Thank you for believing in the vision and supporting the evolution of this groundbreaking project.
 
 <p align="center">
-  <img src="https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/WL_logo.png" height="80"/>&nbsp;&nbsp;
-  <img src="https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/kalicube.com.png" height="80"/>&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/fcse_logo.png" height="80"/>
+  <img src="https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/WL_logo.png" height="70"/>&nbsp;&nbsp;
+  <img src="https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/kalicube.com.png" height="70"/>&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/fcse_logo.png" height="70"/>
 </p>
 
 

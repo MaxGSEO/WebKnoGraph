@@ -21,10 +21,19 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 
 # Apps Images
 
+### WebKnoGraph Crawler
 ![WebKnoGraph Crawler](https://raw.githubusercontent.com/martech-engineer/WebKnoGraph/main/assets/crawler.png)
+
+### Embeddings Controler
 ![Embeddings Controler](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/02_embeddings.png)
+
+### LinkGraph Extractor
 ![LinkgGraph Extractor](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/03_link_graph.png)
+
+### Train GNN Algo
 ![Train GNN Algo](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/04_graphsage_01.png)
+
+### Link Prediction Engine
 ![Link Prediction Engine](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/04_graphsage_02.png)
 
 ---

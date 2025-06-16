@@ -6,8 +6,8 @@ Revolutionizing website internal linking by leveraging cutting-edge data process
 
 We are incredibly grateful to our sponsors for their continued support in making this project possible. Their contributions have been vital in pushing the boundaries of what can be achieved through data-driven internal linking solutions.
 
-- **Kalicube.com**: Special thanks to [Kalicube.com](https://kalicube.com/) for providing invaluable data, resources, and continuous encouragement. Your support has greatly enhanced the scope and impact of WebKnoGraph.
 - **WordLift.io**: We extend our deepest gratitude to [WordLift.io](https://wordlift.io/) for their generous sponsorship and for sharing insights and data that were essential for this project’s success.
+- **Kalicube.com**: Special thanks to [Kalicube.com](https://kalicube.com/) for providing invaluable data, resources, and continuous encouragement. Your support has greatly enhanced the scope and impact of WebKnoGraph.
 - **Faculty of Computer Science and Engineering (FCSE) Skopje**: A heartfelt thanks to [FCSE Skopje professors, PhD Georgina Mircheva and PhD Miroslav Mirchev]([https://dejanmarketing.com/](https://www.finki.ukim.mk/en)) for their innovative ideas and technical suggestions. Their expertise and advisory during this were a key component in shaping the direction of WebKnoGraph.
 
 Without the contributions from these amazing sponsors, WebKnoGraph would not have been possible. Thank you for believing in the vision and supporting the evolution of this groundbreaking project.

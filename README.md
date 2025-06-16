@@ -2,8 +2,6 @@
 
 Revolutionizing website internal linking by leveraging cutting-edge data processing techniques, vector embeddings, and graph-based link prediction algorithms. By combining these advanced methodologies, the project aims to create an intelligent solution that optimizes internal link structures, improving SEO performance and user navigation.
 
-![WebKnoGraph Crawler](https://raw.githubusercontent.com/martech-engineer/WebKnoGraph/main/assets/crawler.png)
-
 ## Sponsors
 
 We are incredibly grateful to our sponsors for their continued support in making this project possible. Their contributions have been vital in pushing the boundaries of what can be achieved through data-driven internal linking solutions.
@@ -14,6 +12,9 @@ We are incredibly grateful to our sponsors for their continued support in making
 
 Without the contributions from these amazing sponsors, WebKnoGraph would not have been possible. Thank you for believing in the vision and supporting the evolution of this groundbreaking project.
 
+# App Images
+
+![WebKnoGraph Crawler](https://raw.githubusercontent.com/martech-engineer/WebKnoGraph/main/assets/crawler.png)
 ---
 
 We welcome more sponsors and partners who are passionate about driving innovation in SEO and website optimization. If you're interested in collaborating or sponsoring, feel free to reach out!

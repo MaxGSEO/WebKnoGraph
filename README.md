@@ -24,7 +24,7 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 ## 1. WebKnoGraph Crawler
 ![WebKnoGraph Crawler](https://raw.githubusercontent.com/martech-engineer/WebKnoGraph/main/assets/crawler.png)
 
-## 2. Embeddings Controler
+## 2. Embeddings Controller
 ![Embeddings Controler](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/02_embeddings.png)
 
 ## 3. LinkGraph Extractor

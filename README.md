@@ -22,7 +22,7 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 # Apps Images
 
 ## 1. WebKnoGraph Crawler
-![WebKnoGraph Crawler](https://raw.githubusercontent.com/martech-engineer/WebKnoGraph/main/assets/crawler.png)
+![WebKnoGraph Crawler](https://raw.githubusercontent.com/martech-engineer/WebKnoGraph/main/assets/01_crawler.png)
 
 ## 2. Embeddings Controller
 ![Embeddings Controler](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/02_embeddings.png)

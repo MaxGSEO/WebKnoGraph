@@ -36,8 +36,8 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 ## 5. Link Prediction Engine
 ![Link Prediction Engine](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/04_graphsage_02.png)
 
-## 6. HTIS and PageRank Sorted URLs
-![HTIS and PageRank Sorted URLs](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/06_HITS_PageRank_Sorted_URLs.png)
+## 6. HITS and PageRank Sorted URLs
+![HITS and PageRank Sorted URLs](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/06_HITS_PageRank_Sorted_URLs.png)
 
 ---
 

@@ -2,7 +2,7 @@
 
 Revolutionizing website internal linking by leveraging cutting-edge data processing techniques, vector embeddings, and graph-based link prediction algorithms. By combining these advanced methodologies, the project aims to create an intelligent solution that optimizes internal link structures, improving SEO performance and user navigation.
 
-## Sponsors
+# Sponsors
 
 We are incredibly grateful to our sponsors for their continued support in making this project possible. Their contributions have been vital in pushing the boundaries of what can be achieved through data-driven internal linking solutions.
 
@@ -21,16 +21,16 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 
 # Apps Images
 
-### 1. WebKnoGraph Crawler
+## 1. WebKnoGraph Crawler
 ![WebKnoGraph Crawler](https://raw.githubusercontent.com/martech-engineer/WebKnoGraph/main/assets/crawler.png)
 
-### 2. Embeddings Controler
+## 2. Embeddings Controler
 ![Embeddings Controler](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/02_embeddings.png)
 
-### 3. LinkGraph Extractor
+## 3. LinkGraph Extractor
 ![LinkgGraph Extractor](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/03_link_graph.png)
 
-### 4. Train GNN Algo
+## 4. Train GNN Algo
 ![Train GNN Algo](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/04_graphsage_01.png)
 
 ### 5. Link Prediction Engine
@@ -40,7 +40,7 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 
 We welcome more sponsors and partners who are passionate about driving innovation in SEO and website optimization. If you're interested in collaborating or sponsoring, feel free to reach out!
 
-## Target Audience
+# Target Audience
 
 WebKnoGraph is designed for tech-savvy marketers and marketing engineers with a strong understanding of advanced data analytics and data-driven marketing strategies. Our ideal users are professionals who have experience with Python or have access to development support within their teams.
 
@@ -48,7 +48,7 @@ These individuals are skilled in interpreting and utilizing data, as well as wor
 
 If you're a data-driven marketer comfortable with using cutting-edge tools to push the boundaries of SEO, WebKnoGraph is built for you.
 
-## Getting Started
+# Getting Started
 
 To explore and utilize WebKnoGraph, follow the instructions below to get started with the code, data, and documentation provided in the repository:
 

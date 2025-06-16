@@ -19,7 +19,7 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 </p>
 
 
-# App Images
+# Apps Images
 
 ![WebKnoGraph Crawler](https://raw.githubusercontent.com/martech-engineer/WebKnoGraph/main/assets/crawler.png)
 ![Embeddings Controler](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/02_embeddings.png)

@@ -15,6 +15,10 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 # App Images
 
 ![WebKnoGraph Crawler](https://raw.githubusercontent.com/martech-engineer/WebKnoGraph/main/assets/crawler.png)
+![Embeddings Controler](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/02_embeddings.png)
+![LinkgGraph Extractor](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/03_link_graph.png)
+![Train GNN Algo](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/04_graphsage_01.png)
+![Link Prediction Engine](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/04_graphsage_02.png)
 ---
 
 We welcome more sponsors and partners who are passionate about driving innovation in SEO and website optimization. If you're interested in collaborating or sponsoring, feel free to reach out!

@@ -33,7 +33,7 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 ## 4. Train GNN Model
 ![Train GNN Algo](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/04_graphsage_01.png)
 
-### 5. Link Prediction Engine
+## 5. Link Prediction Engine
 ![Link Prediction Engine](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/04_graphsage_02.png)
 
 ---

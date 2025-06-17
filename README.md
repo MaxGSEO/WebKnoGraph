@@ -1,6 +1,8 @@
 # WebKnoGraph [👀 it out]
 
-Revolutionizing website internal linking by leveraging cutting-edge data processing techniques, vector embeddings, and graph-based link prediction algorithms. By combining these advanced tech and methodologies, the project aims to create an intelligent solution that optimizes internal link structures, improving SEO performance and user navigation.
+Revolutionizing website internal linking by leveraging cutting-edge data processing techniques, vector embeddings, and graph-based link prediction algorithms. By combining these advanced technologies and methodologies, the project aims to create an intelligent solution that optimizes internal link structures, enhancing both SEO performance and user navigation.
+
+We’re enabling the first publicly available and transparent research for academic and industry purposes in the field of SEO and technical marketing on a global level. This initiative opens the door to innovation and collaboration, setting a new standard for how large-scale websites can manage and improve their internal linking strategies using AI-powered, reproducible methods.
 
 # Sponsors
 

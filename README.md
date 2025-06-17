@@ -90,3 +90,9 @@ To explore and utilize WebKnoGraph, follow the instructions below to get started
 
 By following these resources, you will gain full access to the materials and insights needed to experiment with and extend WebKnoGraph.
 
+# Note
+
+At this stage, unit tests have not been included, as they are considered an overextension for the intended audience of this project—primarily marketing engineers, SEO specialists, and academic collaborators who prioritize conceptual understanding and practical experimentation over formal software validation.
+
+However, we recognize the value of testing for long-term maintainability and reproducibility. If time permits within the defined master thesis period, we plan to provide a basic suite of unit tests to ensure stability and support further development.
+

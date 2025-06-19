@@ -2,13 +2,12 @@ import os
 import gc
 import time
 import fireducks.pandas as pd
-import duckdb
 from datetime import datetime
 from tqdm import tqdm
 
 # Updated import paths based on the new structure
 from src.backend.config.crawler_config import CrawlerConfig
-from src.backend.utils.strategies import CrawlingStrategy, VisitedUrlManager
+from src.backend.utils.strategies import CrawlingStrategy
 from src.backend.data.repositories import (
     CrawlStateRepository,
 )  # Renamed from StateManager

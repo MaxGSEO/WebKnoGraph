@@ -1,9 +1,7 @@
 # File: src/backend/services/recommendation_engine.py
-import os
 import torch
 import json
 import pandas as pd
-from urllib.parse import urlparse
 from src.shared.interfaces import ILogger
 from src.backend.config.link_prediction_config import LinkPredictionConfig
 from src.backend.models.graph_models import GraphSAGEModel

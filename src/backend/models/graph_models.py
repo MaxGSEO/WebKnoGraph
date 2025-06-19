@@ -1,5 +1,4 @@
 # File: src/backend/models/graph_models.py
-import torch
 import torch.nn as nn
 from torch_geometric.nn import SAGEConv
 

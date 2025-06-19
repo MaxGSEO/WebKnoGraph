@@ -1,8 +1,7 @@
 # File: src/backend/services/link_crawler_service.py
-import os
 import gc
 import fireducks.pandas as pd  # Using fireducks.pandas as specified
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urlparse
 from tqdm import tqdm
 
 from src.backend.config.link_crawler_config import LinkCrawlerConfig  # Using new config
@@ -11,13 +10,9 @@ from src.backend.data.link_graph_repository import (
 )  # Using new state manager
 from src.backend.utils.strategies import (
     CrawlingStrategy,
-    VisitedUrlManager,
-    BFSCrawlingStrategy,
-    DFSCrawlingStrategy,
 )  # Reusing strategies
 from src.backend.utils.http import HttpClient  # Reusing existing HttpClient
 from src.backend.utils.link_url import (
-    LinkUrlFilter,
     LinkExtractorForEdges,
 )  # Using new URL components
 from src.shared.interfaces import ILogger

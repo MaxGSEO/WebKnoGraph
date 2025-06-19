@@ -1,6 +1,4 @@
-import os
 import fireducks.pandas as pd  # Using fireducks.pandas as specified
-import duckdb
 from tqdm import tqdm  # For internal progress bar in generate function
 
 from src.backend.config.embeddings_config import EmbeddingConfig

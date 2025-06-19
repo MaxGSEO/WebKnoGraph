@@ -1,8 +1,6 @@
 # File: src/backend/data/graph_dataloader.py
 import os
 import duckdb
-import fireducks.pandas as fpd  # Use fpd for fireducks.pandas
-import pandas as pd  # Import standard pandas as pd
 from src.shared.interfaces import ILogger
 
 

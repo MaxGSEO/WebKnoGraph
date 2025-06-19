@@ -1,7 +1,7 @@
 # .pre-commit-config.yaml (in your project's root directory)
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0 # Use the latest stable version
+    rev: v5.0.0 # Use the latest stable version
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer

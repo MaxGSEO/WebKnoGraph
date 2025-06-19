@@ -15,11 +15,3 @@ repos:
         args: [--fix, --exit-non-zero-on-fix]
       - id: ruff-format
         args: [--check]
-
-  - repo: https://github.com/nbQA-dev/nbQA # This should already be correct from last time
-    rev: 1.8.1 # Or the latest stable version
-    hooks:
-      - id: nbqa-ruff
-        args: [--fix, --exit-non-zero-on-fix]
-      # - id: nbqa-black
-      #   args: [--check]

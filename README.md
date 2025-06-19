@@ -297,10 +297,19 @@ Each module has its own dedicated Gradio UI notebook. It's recommended to run th
 
 ## 🤝 Contributing
 
-(Placeholder: Briefly describe how others can contribute if this were an open-source project.)
+WebKnoGraph invites contributions from developers, researchers, marketers, and anyone driven by curiosity and purpose. This project evolves through collaboration.
+
+You can contribute by improving the codebase, refining documentation, testing workflows, or proposing new use cases. Every pull request, idea, and experiment helps shape a more open and intelligent future for SEO and internal linking.
+
+Clone the repo, start a branch, and share your expertise. Progress happens when people build together.
 
 ---
 
 ## 📄 License
 
-(Placeholder: State the license under which your project is released.)
+WebKnoGraph is released under the **Apache License 2.0**.
+
+This license allows open use, adaptation, and distribution. You can integrate the project into your own workflows, extend its functionality, or build on top of it. The license ensures the project remains accessible and reusable for individuals, teams, and institutions working at the intersection of SEO, AI, and web infrastructure.
+
+Use the code. Improve the methods. Share what you learn.
+

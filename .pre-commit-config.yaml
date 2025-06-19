@@ -1,0 +1,31 @@
+# .pre-commit-config.yaml (in your project's root directory)
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0 # Use the latest stable version
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.0 # Use the latest stable version
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format
+        args: [--check]
+
+  - repo: https://github.com/executablebooks/nbqa
+    rev: 1.9.1 # Use the latest stable version
+    hooks:
+      - id: nbqa-ruff
+        args: [--fix, --exit-non-zero-on-fix]
+      # - id: nbqa-black # Uncomment if you prefer Black for notebooks
+      #   args: [--check]
+
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.8.1 # Use the latest stable version
+    hooks:
+      - id: nbstripout
+        args: [--extra-keys=metadata.kernelspec metadata.language_info]

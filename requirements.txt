@@ -1,0 +1,15 @@
+pandas
+pyarrow
+duckdb
+gradio
+requests
+beautifulsoup4
+lxml
+tqdm
+fireducks
+trafilatura
+sentence-transformers
+torch
+scipy
+torch-geometric # New dependency
+networkx # Used by torch-geometric implicitly, good to have explicit

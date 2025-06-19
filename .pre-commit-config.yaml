@@ -1,23 +1,23 @@
-# .pre-commit-config.yaml (in your project's root directory)
+# .pre-commit-config.yaml
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0 # Use the latest stable version
+    rev: v4.6.0 # Or the version you updated to with 'autoupdate'
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-yaml
       - id: check-added-large-files
 
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.12.0 # Use the latest stable version
+  - repo: https://github.com/astral-sh/ruff # <--- CORRECT THIS LINE FOR RUFF
+    rev: v0.4.8 # Use the latest stable version you want from astral-sh/ruff releases
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
       - id: ruff-format
         args: [--check]
 
-  - repo: https://github.com/executablebooks/nbqa
-    rev: 1.9.1 # Use the latest stable version
+  - repo: https://github.com/nbQA-dev/nbQA # <--- CORRECT THIS LINE FOR NBQA
+    rev: 1.8.1 # Use the latest stable version you want from nbQA-dev/nbQA releases
     hooks:
       - id: nbqa-ruff
         args: [--fix, --exit-non-zero-on-fix]
@@ -25,7 +25,7 @@ repos:
       #   args: [--check]
 
   - repo: https://github.com/kynan/nbstripout
-    rev: 0.8.1 # Use the latest stable version
+    rev: 0.7.1 # Use the latest stable version
     hooks:
       - id: nbstripout
         args: [--extra-keys=metadata.kernelspec metadata.language_info]

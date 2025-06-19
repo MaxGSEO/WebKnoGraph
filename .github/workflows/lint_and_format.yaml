@@ -5,34 +5,36 @@ name: Code Quality Checks
 on:
   push:
     branches:
-      - main # Trigger on pushes to the 'main' branch
-      - master # Also consider 'master' if you use it
+      - main
+      - master
   pull_request:
     branches:
       - main
       - master
-    types: [opened, synchronize, reopened] # Trigger on PR creation, updates, and re-opening
+    types: [opened, synchronize, reopened]
 
 jobs:
   run-pre-commit:
-    runs-on: ubuntu-latest # The virtual environment to run the job on
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository code
-        uses: actions/checkout@v4 # Action to check out your repository
+        uses: actions/checkout@v4
 
       - name: Set up Python environment
-        uses: actions/setup-python@v5 # Action to set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.x' # Use the latest Python 3 version available on the runner (e.g., 3.10, 3.11, 3.12)
-          cache: 'pip' # Cache pip dependencies for faster subsequent runs
+          python-version: '3.x'
+          cache: 'pip'
 
       - name: Install pre-commit framework
         run: pip install pre-commit
 
       - name: Run pre-commit hooks
         run: pre-commit run --all-files
-        # This command runs all hooks defined in your .pre-commit-config.yaml
-        # The --all-files flag ensures it checks all relevant files in the repo,
-        # not just changed ones (which is the default local pre-commit behavior).
-        # The job will fail if any hook reports issues (e.g., non-zero exit code).
+        env:
+          # --- ADD THESE LINES ---
+          # Provide the GitHub token for authentication when pre-commit fetches repositories
+          # This is crucial for pre-commit to clone/fetch hook repositories from GitHub
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # --- END ADDITION ---

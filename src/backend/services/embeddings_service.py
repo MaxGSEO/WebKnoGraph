@@ -1,7 +1,7 @@
 import os
-import fireducks.pandas as pd # Using fireducks.pandas as specified
+import fireducks.pandas as pd  # Using fireducks.pandas as specified
 import duckdb
-from tqdm import tqdm # For internal progress bar in generate function
+from tqdm import tqdm  # For internal progress bar in generate function
 
 from src.backend.config.embeddings_config import EmbeddingConfig
 from src.backend.data.embedding_state_manager import EmbeddingStateManager
@@ -10,6 +10,7 @@ from src.backend.data.embeddings_saver import DataSaver
 from src.backend.utils.text_processing import TextExtractor
 from src.backend.utils.embedding_generation import EmbeddingGenerator
 from src.shared.interfaces import ILogger
+
 
 class EmbeddingPipeline:
     """Orchestrates the entire embedding generation process."""
@@ -55,7 +56,9 @@ class EmbeddingPipeline:
                 # Use tqdm here to show progress for text extraction
                 df_batch["clean_text"] = [
                     self.text_extractor.extract(html)
-                    for html in tqdm(df_batch["Content"], desc="Extracting Text", unit="docs")
+                    for html in tqdm(
+                        df_batch["Content"], desc="Extracting Text", unit="docs"
+                    )
                 ]
                 df_batch = df_batch[df_batch["clean_text"].str.len() > 100]
 

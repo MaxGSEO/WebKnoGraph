@@ -9,17 +9,20 @@ from tqdm import tqdm
 # Updated import paths based on the new structure
 from src.backend.config.crawler_config import CrawlerConfig
 from src.backend.utils.strategies import CrawlingStrategy, VisitedUrlManager
-from src.backend.data.repositories import CrawlStateRepository # Renamed from StateManager
+from src.backend.data.repositories import (
+    CrawlStateRepository,
+)  # Renamed from StateManager
 from src.backend.utils.http import HttpClient
 from src.backend.utils.url import UrlFilter, LinkExtractor
 from src.shared.interfaces import ILogger
+
 
 class WebCrawler:
     def __init__(
         self,
         config: CrawlerConfig,
         crawling_strategy: CrawlingStrategy,
-        state_repository: CrawlStateRepository, # Updated parameter name
+        state_repository: CrawlStateRepository,  # Updated parameter name
         http_client: HttpClient,
         url_filter: UrlFilter,
         link_extractor: LinkExtractor,
@@ -27,7 +30,7 @@ class WebCrawler:
     ):
         self.config = config
         self.crawling_strategy = crawling_strategy
-        self.state_repository = state_repository # Updated attribute name
+        self.state_repository = state_repository  # Updated attribute name
         self.http_client = http_client
         self.url_filter = url_filter
         self.link_extractor = link_extractor
@@ -77,9 +80,7 @@ class WebCrawler:
             )
             os.makedirs(partition_path, exist_ok=True)
             df.to_parquet(
-                path=os.path.join(
-                    partition_path, f"{int(time.time())}.parquet"
-                ),
+                path=os.path.join(partition_path, f"{int(time.time())}.parquet"),
                 engine="pyarrow",
                 compression="snappy",
             )

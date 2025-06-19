@@ -1,6 +1,7 @@
 # File: src/shared/interfaces.py
 from abc import ABC, abstractmethod
 
+
 class ILogger(ABC):
     """Interface for logging messages."""
 

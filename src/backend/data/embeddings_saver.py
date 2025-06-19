@@ -1,7 +1,8 @@
 import os
 import time
-import fireducks.pandas as pd # Using fireducks.pandas as specified
+import fireducks.pandas as pd  # Using fireducks.pandas as specified
 from src.shared.interfaces import ILogger
+
 
 class DataSaver:
     """Saves a batch of embeddings to a Parquet file."""

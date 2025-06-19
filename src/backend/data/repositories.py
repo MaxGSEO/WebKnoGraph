@@ -2,7 +2,8 @@ import sqlite3
 import os
 from src.shared.interfaces import ILogger
 
-class CrawlStateRepository: # Renamed from StateManager
+
+class CrawlStateRepository:  # Renamed from StateManager
     def __init__(self, db_path: str, logger: ILogger):
         self.db_path = db_path
         self.logger = logger

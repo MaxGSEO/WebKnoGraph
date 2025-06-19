@@ -3,6 +3,7 @@ from collections import deque
 from abc import ABC, abstractmethod
 from src.shared.interfaces import ILogger
 
+
 class VisitedUrlManager:
     def __init__(self):
         self.visited = set()
@@ -16,7 +17,8 @@ class VisitedUrlManager:
     def size(self) -> int:
         return len(self.visited)
 
-class CrawlingStrategy(ABC): # Updated base class
+
+class CrawlingStrategy(ABC):  # Updated base class
     def __init__(self, visited_manager: VisitedUrlManager, logger: ILogger):
         self.visited = visited_manager
         self.logger = logger
@@ -30,10 +32,10 @@ class CrawlingStrategy(ABC): # Updated base class
         ]
         for link_url, _ in new_links:
             self.visited.add(link_url)
-        self._add_to_collection(new_links) # Calls abstract method
+        self._add_to_collection(new_links)  # Calls abstract method
 
     @abstractmethod
-    def _add_to_collection(self, links: list[tuple[str, int]]): # NEW Abstract Method
+    def _add_to_collection(self, links: list[tuple[str, int]]):  # NEW Abstract Method
         pass
 
     @abstractmethod
@@ -49,10 +51,11 @@ class CrawlingStrategy(ABC): # Updated base class
         pass
 
     @abstractmethod
-    def get_queue(self) -> list[tuple[str, int]]: # NEW Abstract Method
+    def get_queue(self) -> list[tuple[str, int]]:  # NEW Abstract Method
         pass
 
-class BFSCrawlingStrategy(CrawlingStrategy): # Updated implementation
+
+class BFSCrawlingStrategy(CrawlingStrategy):  # Updated implementation
     def __init__(self, visited_manager: VisitedUrlManager, logger: ILogger):
         super().__init__(visited_manager, logger)
         self.queue = deque()
@@ -74,7 +77,8 @@ class BFSCrawlingStrategy(CrawlingStrategy): # Updated implementation
     def get_queue(self) -> list[tuple[str, int]]:
         return list(self.queue)
 
-class DFSCrawlingStrategy(CrawlingStrategy): # Updated implementation
+
+class DFSCrawlingStrategy(CrawlingStrategy):  # Updated implementation
     def __init__(self, visited_manager: VisitedUrlManager, logger: ILogger):
         super().__init__(visited_manager, logger)
         self.stack = []

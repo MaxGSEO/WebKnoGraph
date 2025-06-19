@@ -7,6 +7,7 @@ warnings.filterwarnings(
     "ignore", category=FutureWarning, module="huggingface_hub.file_download"
 )
 
+
 class TextExtractor:
     """Extracts clean text from raw HTML."""
 

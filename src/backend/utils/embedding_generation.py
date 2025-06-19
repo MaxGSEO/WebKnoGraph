@@ -8,6 +8,7 @@ warnings.filterwarnings(
     "ignore", category=FutureWarning, module="huggingface_hub.file_download"
 )
 
+
 class EmbeddingGenerator:
     """Generates embeddings for a list of texts."""
 

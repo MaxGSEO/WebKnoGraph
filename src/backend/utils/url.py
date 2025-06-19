@@ -2,6 +2,7 @@ import re
 from urllib.parse import urljoin, urlparse, parse_qs, urlencode
 from bs4 import BeautifulSoup
 
+
 class UrlFilter:
     def __init__(self, allowed_path_segment: str, base_domain: str):
         self.allowed_path_segment = allowed_path_segment
@@ -21,6 +22,7 @@ class UrlFilter:
             )
         except Exception:
             return False
+
 
 class LinkExtractor:
     def __init__(self, url_filter: UrlFilter, allowed_params: list[str]):

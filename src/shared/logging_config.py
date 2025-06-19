@@ -2,15 +2,22 @@ import logging
 import io
 from src.shared.interfaces import ILogger
 
-class GradioLogHandler(logging.StreamHandler): # Inherit from StreamHandler
+
+class GradioLogHandler(logging.StreamHandler):  # Inherit from StreamHandler
     def __init__(self, log_output_stream: io.StringIO):
-        super().__init__(log_output_stream) # Pass stream directly to super
+        super().__init__(log_output_stream)  # Pass stream directly to super
         self.setFormatter(
             logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
         )
 
+
 class ConsoleAndGradioLogger(ILogger):
-    def __init__(self, log_output_stream: io.StringIO, logger_name: str = "AppLogger", level=logging.INFO):
+    def __init__(
+        self,
+        log_output_stream: io.StringIO,
+        logger_name: str = "AppLogger",
+        level=logging.INFO,
+    ):
         self._logger = logging.getLogger(logger_name)
         self._logger.setLevel(level)
         if self._logger.hasHandlers():
@@ -22,7 +29,9 @@ class ConsoleAndGradioLogger(ILogger):
         )
         self._logger.addHandler(console_handler)
 
-        gradio_handler = GradioLogHandler(log_output_stream) # Use the specific Gradio handler
+        gradio_handler = GradioLogHandler(
+            log_output_stream
+        )  # Use the specific Gradio handler
         self._logger.addHandler(gradio_handler)
 
     def info(self, message: str):

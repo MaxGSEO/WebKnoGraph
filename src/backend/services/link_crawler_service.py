@@ -1,21 +1,38 @@
 # File: src/backend/services/link_crawler_service.py
 import os
 import gc
-import fireducks.pandas as pd # Using fireducks.pandas as specified
+import fireducks.pandas as pd  # Using fireducks.pandas as specified
 from urllib.parse import urlparse, urljoin
 from tqdm import tqdm
 
-from src.backend.config.link_crawler_config import LinkCrawlerConfig # Using new config
-from src.backend.data.link_graph_repository import LinkGraphStateManager # Using new state manager
-from src.backend.utils.strategies import CrawlingStrategy, VisitedUrlManager, BFSCrawlingStrategy, DFSCrawlingStrategy # Reusing strategies
-from src.backend.utils.http import HttpClient # Reusing existing HttpClient
-from src.backend.utils.link_url import LinkUrlFilter, LinkExtractorForEdges # Using new URL components
+from src.backend.config.link_crawler_config import LinkCrawlerConfig  # Using new config
+from src.backend.data.link_graph_repository import (
+    LinkGraphStateManager,
+)  # Using new state manager
+from src.backend.utils.strategies import (
+    CrawlingStrategy,
+    VisitedUrlManager,
+    BFSCrawlingStrategy,
+    DFSCrawlingStrategy,
+)  # Reusing strategies
+from src.backend.utils.http import HttpClient  # Reusing existing HttpClient
+from src.backend.utils.link_url import (
+    LinkUrlFilter,
+    LinkExtractorForEdges,
+)  # Using new URL components
 from src.shared.interfaces import ILogger
 
-class EdgeCrawler: # Renamed from EdgeCrawler
-    def __init__(self, config: LinkCrawlerConfig, crawling_strategy: CrawlingStrategy,
-                 state_manager: LinkGraphStateManager, http_client: HttpClient,
-                 link_extractor: LinkExtractorForEdges, logger: ILogger):
+
+class EdgeCrawler:  # Renamed from EdgeCrawler
+    def __init__(
+        self,
+        config: LinkCrawlerConfig,
+        crawling_strategy: CrawlingStrategy,
+        state_manager: LinkGraphStateManager,
+        http_client: HttpClient,
+        link_extractor: LinkExtractorForEdges,
+        logger: ILogger,
+    ):
         self.config = config
         self.crawling_strategy = crawling_strategy
         self.state_manager = state_manager
@@ -30,7 +47,9 @@ class EdgeCrawler: # Renamed from EdgeCrawler
             self.logger.warning(f"Max redirects for {from_url}. Skipping.")
             return
 
-        status, content, redirect_url = self.http_client.fetch(from_url) # HttpClient expects a config compatible with LinkCrawlerConfig
+        status, content, redirect_url = self.http_client.fetch(
+            from_url
+        )  # HttpClient expects a config compatible with LinkCrawlerConfig
         self.logger.info(f"Processed {from_url} [{status}]")
 
         if 200 <= status < 300 and content:
@@ -43,23 +62,28 @@ class EdgeCrawler: # Renamed from EdgeCrawler
                 for to_url in linked_urls:
                     to_url_path = urlparse(to_url).path
                     if to_url_path.startswith(saving_scope):
-                        self.edge_buffer.append({'FROM': from_url, 'TO': to_url})
+                        self.edge_buffer.append({"FROM": from_url, "TO": to_url})
 
             # Add links to crawling strategy (for further crawling)
             self.crawling_strategy.add_links([(link, 0) for link in linked_urls])
-            del content # Free up memory
+            del content  # Free up memory
 
         elif redirect_url:
             normalized_redirect = self.link_extractor.normalize_url(redirect_url)
             # Use the link_extractor's url_filter for validation
-            if self.link_extractor.url_filter.is_valid_for_crawling(normalized_redirect):
-                self.crawling_strategy.add_links([(normalized_redirect, num_redirects + 1)])
+            if self.link_extractor.url_filter.is_valid_for_crawling(
+                normalized_redirect
+            ):
+                self.crawling_strategy.add_links(
+                    [(normalized_redirect, num_redirects + 1)]
+                )
 
     def _save_edges_to_csv(self):
-        if not self.edge_buffer: return
+        if not self.edge_buffer:
+            return
 
         df = pd.DataFrame(self.edge_buffer)
-        self.state_manager.append_edges_to_csv(df) # Use state manager to save
+        self.state_manager.append_edges_to_csv(df)  # Use state manager to save
         self.edge_buffer = []
         gc.collect()
 

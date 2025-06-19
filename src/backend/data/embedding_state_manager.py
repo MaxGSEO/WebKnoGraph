@@ -2,6 +2,7 @@ import os
 import duckdb
 from src.shared.interfaces import ILogger
 
+
 class EmbeddingStateManager:
     """Manages the state of the embedding process, enabling resumes."""
 
@@ -19,7 +20,9 @@ class EmbeddingStateManager:
 
         try:
             # Ensure output_glob_path uses forward slashes for DuckDB even on Windows
-            output_glob_path = os.path.join(self.output_path, "*.parquet").replace(os.sep, "/")
+            output_glob_path = os.path.join(self.output_path, "*.parquet").replace(
+                os.sep, "/"
+            )
             processed_df = duckdb.query(
                 f"SELECT DISTINCT URL FROM read_parquet('{output_glob_path}')"
             ).to_df()
@@ -28,7 +31,7 @@ class EmbeddingStateManager:
                 self.logger.info(
                     f"Found {len(processed_urls)} URLs that have already been processed. They will be skipped."
                 )
-        except Exception as e: # Corrected indentation for the except block
+        except Exception as e:  # Corrected indentation for the except block
             self.logger.info(
                 f"No previously processed embeddings found or error reading existing files: {e}. Starting fresh."
             )

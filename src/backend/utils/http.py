@@ -7,6 +7,7 @@ from urllib3.util.retry import Retry
 from src.backend.config.crawler_config import CrawlerConfig
 from src.shared.interfaces import ILogger
 
+
 class HttpClient:
     def __init__(self, config: CrawlerConfig, logger: ILogger):
         self.config = config

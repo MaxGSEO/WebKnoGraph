@@ -12,7 +12,7 @@ We're enabling **the first publicly available and transparent research for acade
 
 ## 📂 Project Structure
 
-The project is organized into a modular structure to promote maintainability, reusability, and clear separation of concerns. This is the current folder layout:
+The project is organized into a modular structure to promote maintainability, reusability, and clear separation of concerns. This is the current folder layout but can change over time:
 
 ```
 WebKnoGraph/

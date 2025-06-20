@@ -117,7 +117,7 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 ## 3. LinkGraph Extractor
 ![LinkGraph Extractor](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/03_link_graph.png)
 
-## 4. Train GNN Model
+## 4. GNN Model Trainer
 ![Train GNN Algo](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/04_graphsage_01.png)
 
 ## 5. Link Prediction Engine

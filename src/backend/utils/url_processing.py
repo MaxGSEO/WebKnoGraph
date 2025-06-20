@@ -1,7 +1,6 @@
 # File: src/backend/utils/url_processing.py
 from urllib.parse import urlparse
 
-
 class URLProcessor:
     """
     Handles URL-related operations, specifically calculating folder depth.

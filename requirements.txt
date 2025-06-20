@@ -11,5 +11,5 @@ trafilatura
 sentence-transformers
 torch
 scipy
-torch-geometric # New dependency
-networkx # Used by torch-geometric implicitly, good to have explicit
+torch-geometric
+networkx # Added for this module

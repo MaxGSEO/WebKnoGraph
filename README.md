@@ -31,7 +31,8 @@ WebKnoGraph/
 │   ├── crawler_ui.ipynb           # UI for Content Crawler
 │   ├── embeddings_ui.ipynb        # UI for Embeddings Pipeline
 │   ├── link_crawler_ui.ipynb      # UI for Link Graph Extractor
-│   └── link_prediction_ui.ipynb   # UI for GNN Link Prediction & Recommendation
+│   ├── link_prediction_ui.ipynb   # UI for GNN Link Prediction & Recommendation
+│   └── pagerank_ui.ipynb          # UI for PageRank & HITS Analysis (Newly added)
 ├── src/                           # Core source code for the application
 │   ├── backend/                   # Backend logic for various functionalities
 │   │   ├── __init__.py
@@ -40,7 +41,8 @@ WebKnoGraph/
 │   │   │   ├── crawler_config.py
 │   │   │   ├── embeddings_config.py
 │   │   │   ├── link_crawler_config.py
-│   │   │   └── link_prediction_config.py
+│   │   │   ├── link_prediction_config.py
+│   │   │   └── pagerank_config.py     # Newly added
 │   │   ├── data/                  # Data loading, saving, and state management components
 │   │   │   ├── __init__.py
 │   │   │   ├── repositories.py          # For Content Crawler state (SQLite)
@@ -50,6 +52,9 @@ WebKnoGraph/
 │   │   │   ├── link_graph_repository.py # For Link Graph Extractor state (SQLite) & CSV saving
 │   │   │   ├── graph_dataloader.py      # For Link Prediction data loading
 │   │   │   └── graph_processor.py       # For Link Prediction data processing
+│   │   ├── graph/                 # Graph-specific algorithms and analysis
+│   │   │   ├── __init__.py
+│   │   │   └── analyzer.py            # Newly added
 │   │   ├── models/                # Machine learning model definitions
 │   │   │   ├── __init__.py
 │   │   │   └── graph_models.py          # For GNN Link Prediction (GraphSAGE)
@@ -59,7 +64,8 @@ WebKnoGraph/
 │   │   │   ├── embeddings_service.py
 │   │   │   ├── link_crawler_service.py
 │   │   │   ├── graph_training_service.py
-│   │   │   └── recommendation_engine.py
+│   │   │   ├── recommendation_engine.py
+│   │   │   └── pagerank_service.py    # Newly added
 │   │   └── utils/                 # General utility functions
 │   │       ├── __init__.py
 │   │       ├── http.py                    # HTTP client utilities (reusable)
@@ -76,9 +82,8 @@ WebKnoGraph/
 ├── LICENSE
 ├── README.md
 ├── requirements.txt               # All required Python packages
-└── technical_report/              # Placeholder for documentation/reports
+└── technical_report/              # Placeholder for documentation
 ```
-
 ---
 
 # Sponsors

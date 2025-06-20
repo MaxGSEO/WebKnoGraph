@@ -230,40 +230,50 @@ Each notebook's first cell also contains commented-out `!pip install` commands. 
 2. Uncomment the `!pip install ...` lines in the first cell.
 3. Run that first cell. This will install all necessary libraries into your Colab environment for the current session. Alternatively, you can manually run `!pip install -r requirements.txt` in a Colab cell, ensuring your requirements.txt is up to date.
 
-### 5. Running the Applications (Gradio UIs)
+5. Running the Applications (Gradio UIs)
 
 Each module has its own dedicated Gradio UI notebook. It's recommended to run them in the following order as outputs from one serve as inputs for the next.
+General Steps for Each Notebook:
+* Open the desired `*.ipynb` file in Google Colab.
+* Go to `Runtime` -> `Disconnect and delete runtime` (This is **CRUCIAL** for a clean start and to pick up any code changes).
+* Go to `Runtime` -> `Run all cells`.
+* After the cells finish executing, a Gradio UI link (local and/or public `ngrok.io` link) will appear in the output of the last cell. Click this link to interact with the application.
 
-**General Steps for Each Notebook:**
+5.1. Content Crawler
 
-1. Open the desired `*.ipynb` file in Google Colab.
-2. Go to **Runtime -> Disconnect and delete runtime** (This is CRUCIAL for a clean start and to pick up any code changes).
-3. Go to **Runtime -> Run all cells**.
-4. After the cells finish executing, a Gradio UI link (local and/or public ngrok.io link) will appear in the output of the last cell. Click this link to interact with the application.
+* **Notebook:** `notebooks/crawler_ui.ipynb`
+* **Purpose:** Crawl a website and save content as Parquet files.
+* **Default Output:** `/content/drive/My Drive/WebKnoGraph/data/crawled_data_parquet/`
 
-#### 5.1. Content Crawler
-- **Notebook:** `notebooks/crawler_ui.ipynb`
-- **Purpose:** Crawl a website and save content as Parquet files.
-- **Default Output:** `/content/drive/My Drive/WebKnoGraph/data/crawled_data_parquet/`
+5.2. Embeddings Pipeline
 
-#### 5.2. Embeddings Pipeline
-- **Notebook:** `notebooks/embeddings_ui.ipynb`
-- **Purpose:** Generate embeddings for crawled URLs.
-- **Requires:** Output from the Content Crawler (`crawled_data_parquet/`).
-- **Default Output:** `/content/drive/My Drive/WebKnoGraph/data/url_embeddings/`
+* **Notebook:** `notebooks/embeddings_ui.ipynb`
+* **Purpose:** Generate embeddings for crawled URLs.
+* **Requires:** Output from the Content Crawler (`crawled_data_parquet/`).
+* **Default Output:** `/content/drive/My Drive/WebKnoGraph/data/url_embeddings/`
 
-#### 5.3. Link Graph Extractor
-- **Notebook:** `notebooks/link_crawler_ui.ipynb`
-- **Purpose:** Extract internal FROM, TO links and save as a CSV edge list.
-- **Default Output:** `/content/drive/My Drive/WebKnoGraph/data/link_graph_edges.csv`
+5.3. Link Graph Extractor
 
-#### 5.4. GNN Link Prediction & Recommendation Engine
-- **Notebook:** `notebooks/link_prediction_ui.ipynb`
-- **Purpose:** Train a GNN model on the link graph and embeddings, then get link recommendations.
-- **Requires:**
-  - Output from Link Graph Extractor (`link_graph_edges.csv`).
-  - Output from Embeddings Pipeline (`url_embeddings/`).
-- **Default Output:** `/content/drive/My Drive/WebKnoGraph/data/prediction_model/`
+* **Notebook:** `notebooks/link_crawler_ui.ipynb`
+* **Purpose:** Extract internal FROM, TO links and save as a CSV edge list.
+* **Default Output:** `/content/drive/My Drive/WebKnoGraph/data/link_graph_edges.csv`
+
+5.4. GNN Link Prediction & Recommendation Engine
+
+* **Notebook:** `notebooks/link_prediction_ui.ipynb`
+* **Purpose:** Train a GNN model on the link graph and embeddings, then get link recommendations.
+* **Requires:**
+    * Output from Link Graph Extractor (`link_graph_edges.csv`).
+    * Output from Embeddings Pipeline (`url_embeddings/`).
+* **Default Output:** `/content/drive/My Drive/WebKnoGraph/data/prediction_model/`
+* **Important Note:** After training, you must select a specific URL from the dropdown in the "Get Link Recommendations" tab for recommendations to be generated. Do not use the placeholder message.
+
+**5.5. PageRank & HITS Analysis**
+
+* **Notebook:** `notebooks/pagerank_ui.ipynb`
+* **Purpose:** Calculate PageRank and HITS scores for URLs based on the link graph, and analyze folder depths.
+* **Requires:** Output from the Link Graph Extractor (`link_graph_edges.csv`). (It also generates `url_analysis_results.csv` which is then used internally for HITS analysis).
+* **Default Output:** `/content/drive/My Drive/WebKnoGraph/data/url_analysis_results.csv`
 
 **Important Note:** After training, you must select a specific URL from the dropdown in the "Get Link Recommendations" tab for recommendations to be generated. Do not use the placeholder message.
 

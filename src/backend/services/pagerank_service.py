@@ -1,12 +1,9 @@
 # File: src/backend/services/pagerank_service.py
 import os
 import pandas as pd # Using standard pandas as pd
-import fireducks.pandas as fpd # Use fpd for fireducks.pandas
-import networkx as nx # Import networkx if GraphAnalyzer needs it
 from src.shared.interfaces import ILogger
 from src.backend.config.pagerank_config import PageRankConfig # Using new config
 from src.backend.utils.url_processing import URLProcessor # Using centralized URLProcessor
-from src.backend.graph.analyzer import GraphAnalyzer # Using new GraphAnalyzer
 
 class PageRankProcessor: # Renamed from LinkGraphProcessor for clarity
     """

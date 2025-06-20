@@ -329,3 +329,13 @@ WebKnoGraph is released under the **Apache License 2.0**.
 This license allows open use, adaptation, and distribution. You can integrate the project into your own workflows, extend its functionality, or build on top of it. The license ensures the project remains accessible and reusable for individuals, teams, and institutions working at the intersection of SEO, AI, and web infrastructure.
 
 Use the code. Improve the methods. Share what you learn.
+
+---
+
+## 👩‍💻 About the Creator
+
+[**Emilija Gjorgjevska**](https://www.linkedin.com/in/emilijagjorgjevska/) brings a rare blend of technical depth, product strategy, and marketing insight to the development of **WebKnoGraph**. She operates at the intersection of applied AI, SEO engineering, and knowledge representation, crafting solutions that are performant and deeply aligned with the real-world needs of digital platforms.
+
+Beyond code, Emilija’s background in marketing technology and ontology engineering empowers her to translate abstract research into actionable tooling for SEO professionals, SaaS teams, and content-heavy enterprises. She is a strong advocate for cross-disciplinary collaboration, and her leadership in the WebKnoGraph project signals a new paradigm in how we architect, evaluate, and scale intelligent linking systems, anchored in open science, responsible automation, and strategic real-world value.
+
+In her free time, Emilija co-leads [**Women in AI & Digital DACH**](https://www.linkedin.com/company/womeninaianddigital/), a community committed to increasing visibility and opportunity for women shaping the future of AI and digital work across the DACH region.

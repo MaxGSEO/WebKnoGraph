@@ -109,7 +109,7 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 ## 1. WebKnoGraph Crawler
 ![WebKnoGraph Crawler](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/01_crawler.png)
 
-## 2. Embeddings Controller
+## 2. Embeddings Generator
 ![Embeddings Controller](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/02_embeddings.png)
 
 ## 3. LinkGraph Extractor
@@ -121,7 +121,7 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 ## 5. Link Prediction Engine
 ![Link Prediction Engine](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/04_graphsage_02.png)
 
-## 6. HITS and PageRank Sorted URLs
+## 6. HITS and PageRank URL Sorter
 ![HITS and PageRank Sorted URLs](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/06_HITS_PageRank_Sorted_URLs.png)
 
 ---

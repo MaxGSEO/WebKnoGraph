@@ -8,7 +8,7 @@ We're enabling **the first publicly available and transparent research for acade
 
 **Note:** At this stage, a better separation of frontend, backend, and data logic has been implemented. This `README.md` reflects that modular structure.
 
-**TO DO:** testing logic.
+**TO DO:** testing logic, postponed for the last quartal of 2025.
 
 ---
 

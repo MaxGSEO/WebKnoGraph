@@ -6,7 +6,9 @@ We're enabling **the first publicly available and transparent research for acade
 
 ---
 
-**Note:** At this stage, a better separation of frontend, backend, data, and test logic has been implemented. This `README.md` reflects that modular structure.
+**Note:** At this stage, a better separation of frontend, backend, and data logic has been implemented. This `README.md` reflects that modular structure. 
+
+**TO DO:** testing logic.
 
 ---
 
@@ -172,7 +174,7 @@ To explore and utilize WebKnoGraph, follow the instructions below to get started
 
 - **Code**: The core code for this project is located in the `src` folder, organized into `backend` and `shared` modules. The `notebooks` folder contains the Jupyter notebooks that serve as interactive Gradio UIs for each application.
 - **Data**: The data used for analysis and testing, as well as generated outputs (like crawled content, embeddings, and link graphs), are stored within the `data` folder (though this folder is typically empty in the repository and populated at runtime).
-- **Technical Report**: For a comprehensive understanding of the project, including the methodology, algorithms, and results, refer to the detailed technical report provided in the `technical_report/Technical_Report_Emilija_Gjorgjevska.pdf` file. This document gives an in-depth coverage of the concepts and the execution of the solution.
+- **Technical Report**: For a comprehensive understanding of the project, including the methodology, algorithms, and results, refer to the detailed technical report provided in the `technical_report/WebKnoGraph_Technical_Report.pdf` file. This document gives an in-depth coverage of the concepts and the execution of the solution.
 
 By following these resources, you will gain full access to the materials and insights needed to experiment with and extend WebKnoGraph.
 

@@ -12,7 +12,7 @@ We're enabling **the first publicly available and transparent research for acade
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 The project is organized into a modular structure to promote maintainability, reusability, and clear separation of concerns. This is the current folder layout but can change over time:
 
@@ -180,16 +180,16 @@ By following these resources, you will gain full access to the materials and ins
 
 ---
 
-## 🚀 Setup and Running
+# 🚀 Setup and Running
 
 This project is designed to be easily runnable in a Google Colab environment, leveraging Google Drive for persistent data storage.
 
-### 1. Prerequisites
+## 1. Prerequisites
 
 * **Google Account:** Required for Google Colab and Google Drive.
 * **Python 3.8+**
 
-### 2. Clone/Upload the Repository
+## 2. Clone/Upload the Repository
 
 1. **Clone (if using Git locally):**
    ```bash
@@ -203,7 +203,7 @@ This project is designed to be easily runnable in a Google Colab environment, le
    * Unzip it.
    * Upload the `WebKnoGraph` folder directly to your Google Drive (e.g., into `My Drive/`). Ensure the internal folder structure is preserved exactly as shown in the [Project Structure](#-project-structure) section.
 
-### 3. Google Drive Mounting
+## 3. Google Drive Mounting
 
 All notebooks assume your `WebKnoGraph` project is located at `/content/drive/My Drive/WebKnoGraph/` after Google Drive is mounted. This path is explicitly set in each notebook.
 
@@ -216,7 +216,7 @@ from google.colab import drive
 drive.mount("/content/drive")
 ```
 
-### 4. Install Dependencies
+## 4. Install Dependencies
 
 Each notebook's first cell also contains commented-out `!pip install` commands. It's recommended to:
 
@@ -273,33 +273,33 @@ General Steps for Each Notebook:
 
 ---
 
-## ⚠️ Troubleshooting Tips
+# ⚠️ Troubleshooting Tips
 
-### ModuleNotFoundError: No module named 'src':
+## ModuleNotFoundError: No module named 'src':
 - Ensure your `WebKnoGraph` folder is directly under `/content/drive/My Drive/`.
 - Verify that `src` directory exists within `WebKnoGraph` and contains `backend/` and `shared/`.
 - Make sure the `project_root` variable in the first cell of your notebook exactly matches the absolute path to your `WebKnoGraph` folder on Google Drive.
 - Always perform a **Runtime -> Disconnect and delete runtime** before re-running.
 
-### ModuleNotFoundError: No module named 'src.backend.data.some_module' (or similar):
+## ModuleNotFoundError: No module named 'src.backend.data.some_module' (or similar):
 - Check your file paths (`!ls -R "/content/drive/My Drive/WebKnoGraph"`) to ensure the module file (`some_module.py`) is physically located at the path implied by the import (`src/backend/data/`).
 - Ensure there's an `__init__.py` file (even if empty) in every directory along the import path (e.g., `src/backend/__init__.py`, `src/backend/data/__init__.py`).
 - Verify the exact case-sensitivity of folder and file names.
 - Confirm you have copy-pasted the entire content into the file and saved it correctly. An empty or syntax-error-laden file will also cause this.
 - Always perform a **Runtime -> Disconnect and delete runtime** before re-running.
 
-### ImportError: generic_type: type "ExplainType" is already registered!" (for duckdb):
+## ImportError: generic_type: type "ExplainType" is already registered!" (for duckdb):
 - This typically indicates a conflict from multiple installations or an unclean session.
 - Perform a **Runtime -> Disconnect and delete runtime** and then run all cells from scratch. Ensure the `!pip install` commands run in the very first cell before any other imports.
 
-### KeyError in RecommendationEngine / Dropdown Issues:
+## KeyError in RecommendationEngine / Dropdown Issues:
 - Ensure the model training pipeline completes successfully first.
 - After training, manually select a valid URL from the dropdown for recommendations. The dropdown might initially show a placeholder if artifacts don't exist.
 - If retraining, ensure old output artifacts are cleared or overwritten.
 
 ---
 
-## 🤝 Contributing
+# 🤝 Contributing
 
 WebKnoGraph invites contributions from developers, researchers, marketers, and anyone driven by curiosity and purpose. This project evolves through collaboration.
 
@@ -309,7 +309,7 @@ Clone the repo, start a branch, and share your expertise. Progress happens when 
 
 ---
 
-## 📄 License
+# 📄 License
 
 WebKnoGraph is released under the **Apache License 2.0**.
 
@@ -318,7 +318,7 @@ This license allows open use, adaptation, and distribution. You can integrate th
 Use the code. Improve the methods. Share what you learn.
 
 ---
-## 🖩 Internal Linking Calculator
+# 🖩 Internal Linking Calculator
 
 This interactive calculator estimates the potential **cost savings and ROI** from optimizing internal links, based on your keyword data, CPC benchmarks, and click-through assumptions.
 
@@ -326,7 +326,7 @@ This interactive calculator estimates the potential **cost savings and ROI** fro
 
 ---
 
-## 👩‍💻 About the Creator
+# 👩‍💻 About the Creator
 
 [**Emilija Gjorgjevska**](https://www.linkedin.com/in/emilijagjorgjevska/) brings a rare blend of technical depth, product strategy, and marketing insight to the development of **WebKnoGraph**. She operates at the intersection of applied AI, SEO engineering, and knowledge representation, crafting solutions that are performant and deeply aligned with the real-world needs of digital platforms.
 
@@ -336,7 +336,7 @@ In her free time, Emilija co-leads [**Women in AI & Digital DACH**](https://www.
 
 <div align="left">
 
-## ☕ Support Future Work
+# ☕ Support Future Work
 
 If this project sparked ideas or saved you time, consider buying me a coffee to support future work:
 

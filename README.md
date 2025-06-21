@@ -338,7 +338,7 @@ In her free time, Emilija co-leads [**Women in AI & Digital DACH**](https://www.
 
 ## ☕ Support Future Work
 
-If this project sparked ideas or saved you time, and you'd like to see more work like this, consider supporting it with a coffee:
+If this project sparked ideas or saved you time, consider buying me a coffee to support future work:
 
 <a href="https://coff.ee/emiliagjorgjevska" target="_blank">
   <img src="https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/bmc-brand-logo.png" alt="Buy Me a Coffee" height="45">

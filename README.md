@@ -333,3 +333,16 @@ This interactive calculator estimates the potential **cost savings and ROI** fro
 Beyond code, Emilija’s background in marketing technology and ontology engineering empowers her to translate abstract research into actionable tooling for SEO professionals, SaaS teams, and content-heavy enterprises. She is a strong advocate for cross-disciplinary collaboration, and her leadership in the WebKnoGraph project signals a new paradigm in how we architect, evaluate, and scale intelligent linking systems, anchored in open science, responsible automation, and strategic real-world value.
 
 In her free time, Emilija co-leads [**Women in AI & Digital DACH**](https://www.linkedin.com/company/womeninaianddigital/), a community committed to increasing visibility and opportunity for women shaping the future of AI and digital work across the DACH region.
+
+<div align="left">
+
+## ☕ Support Future Work
+
+If this project sparked ideas or saved you time, and you'd like to see more work like this, consider supporting it with a coffee:
+
+<a href="https://coff.ee/emiliagjorgjevska" target="_blank">
+  <img src="https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/bmc-brand-logo.png" alt="Buy Me a Coffee" height="45">
+</a>
+
+</div>
+

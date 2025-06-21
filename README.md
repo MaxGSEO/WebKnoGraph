@@ -88,7 +88,7 @@ WebKnoGraph/
 ```
 ---
 
-# Sponsors
+# 💪 Sponsors
 
 We are incredibly grateful to our sponsors for their continued support in making this project possible. Their contributions have been vital in pushing the boundaries of what can be achieved through data-driven internal linking solutions.
 
@@ -106,7 +106,7 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 
 ---
 
-# Apps Images
+# 📷 Apps Images
 
 ## 1. WebKnoGraph Crawler
 ![WebKnoGraph Crawler](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/01_crawler.png)
@@ -132,7 +132,7 @@ We welcome more sponsors and partners who are passionate about driving innovatio
 
 ---
 
-# Who is WebKnoGraph for?
+# 👐 Who is WebKnoGraph for?
 
 WebKnoGraph is created for companies where content plays a central role in business growth. It is suited for mid to large-sized organizations that manage high volumes of content, often exceeding 1,000 unique pages within each structured folder, such as a blog, help center, or product documentation section.
 
@@ -158,7 +158,7 @@ WebKnoGraph empowers these organizations to scale internal linking with precisio
 
 ---
 
-# Target Reading Audience
+# 📖 Target Reading Audience
 
 WebKnoGraph is designed for **tech-savvy marketers and marketing engineers** with a strong understanding of advanced data analytics and data-driven marketing strategies. Our ideal users are professionals who have experience with Python or have access to development support within their teams.
 
@@ -168,7 +168,7 @@ If you're a data-driven marketer comfortable with using cutting-edge tools to pu
 
 ---
 
-# Getting Started
+# 🗋 Getting Started
 
 To explore and utilize WebKnoGraph, follow the instructions below to get started with the code, data, and documentation provided in the repository:
 

@@ -211,22 +211,9 @@ Each notebook's first cell contains the necessary Python code to mount your Goog
 
 ```python
 # Part of the first cell in each notebook
-try:
-    from google.colab import drive
-    if not os.path.exists("/content/drive/My Drive"): # Check if already mounted
-        drive.mount("/content/drive/")
-        print("Google Drive mounted successfully.")
-    else:
-        print("Google Drive already mounted.")
-except ImportError:
-    print("Not running in Google Colab environment. Skipping Google Drive mount.")
-except Exception as e:
-    print(f"Error mounting Google Drive: {e}")
+from google.colab import drive
 
-# This line is crucial for importing modules from your src/ folder
-project_root = "/content/drive/My Drive/WebKnoGraph"
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
+drive.mount("/content/drive")
 ```
 
 ### 4. Install Dependencies

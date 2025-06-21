@@ -318,6 +318,7 @@ This license allows open use, adaptation, and distribution. You can integrate th
 Use the code. Improve the methods. Share what you learn.
 
 ---
+## 🖩 Internal Linking Calculator
 
 This interactive calculator estimates the potential **cost savings and ROI** from optimizing internal links—based on your keyword data, CPC benchmarks, and click-through assumptions.  
 Built to support SEO teams, content strategists, and marketing leads working on content-heavy websites.

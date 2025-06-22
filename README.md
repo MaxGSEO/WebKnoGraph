@@ -168,7 +168,7 @@ If you're a data-driven marketer comfortable with using cutting-edge tools to pu
 
 ---
 
-# 🗎 Getting Started
+# 🔍 Getting Started
 
 To explore and utilize WebKnoGraph, follow the instructions below to get started with the code, data, and documentation provided in the repository:
 

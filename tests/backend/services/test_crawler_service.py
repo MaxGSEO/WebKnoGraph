@@ -1,11 +1,6 @@
 import unittest
 from unittest.mock import MagicMock, patch
-import pandas as pd
-import os
 from datetime import datetime
-from tqdm import (
-    tqdm,
-)  # Import tqdm if it's used in the tested code, to avoid NameError if not mocked
 
 # Adjust import paths as necessary based on your project structure
 from src.backend.services.crawler_service import WebCrawler

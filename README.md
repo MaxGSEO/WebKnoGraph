@@ -193,7 +193,7 @@ This project is designed to be easily runnable in a Google Colab environment, le
 
 1. **Clone (if using Git locally):**
    ```bash
-   git clone https://github.com/your-repo-link/WebKnoGraph.git
+   git clone https://github.com/martech-engineer/WebKnoGraph.git
    cd WebKnoGraph
    ```
    Then, upload this `WebKnoGraph` folder to your Google Drive.

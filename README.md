@@ -88,9 +88,9 @@ WebKnoGraph/  (Your project root)
 ├── tests/                    # <-- NEW: Top-level directory for all tests
 │   ├── backend/
 │   │   ├── services/
-│   │   │   └── test_crawler_service.py 
-│   │   └── __init__.py       
-│   └── __init__.py           
+│   │   │   └── test_crawler_service.py
+│   │   └── __init__.py
+│   └── __init__.py
 ├── LICENSE
 ├── README.md
 ├── requirements.txt

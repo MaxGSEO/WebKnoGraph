@@ -8,7 +8,7 @@ We're enabling **the first publicly available and transparent research for acade
 
 **Note:** At this stage, a better separation of frontend, backend, and data logic has been implemented. This `README.md` reflects that modular structure.
 
-**TO-DOs:** Manual testing proves the stablility of the modules. Automated testing logic is postponed for the last quartal of 2025.
+**TO-DOs:** Manual testing confirms module stability. Full automation is planned for Q4 2025.
 
 ---
 
@@ -17,8 +17,8 @@ We're enabling **the first publicly available and transparent research for acade
 The project is organized into a modular structure to promote maintainability, reusability, and clear separation of concerns. This is the current folder layout but can change over time:
 
 ```
-WebKnoGraph/
-├── assets/                        # Project assets (images, etc.)
+WebKnoGraph/  (Your project root)
+├── assets/                   # Project assets (images, etc.)
 │   ├── 01_crawler.png
 │   ├── 02_embeddings.png
 │   ├── 03_link_graph.png
@@ -28,63 +28,74 @@ WebKnoGraph/
 │   ├── WL_logo.png
 │   ├── fcse_logo.png
 │   └── kalicube.com.png
-├── data/                          # (This directory should typically be empty in the repo, used for runtime output)
-├── notebooks/                     # Jupyter notebooks, each acting as a UI entry point
-│   ├── crawler_ui.ipynb           # UI for Content Crawler
-│   ├── embeddings_ui.ipynb        # UI for Embeddings Pipeline
-│   ├── link_crawler_ui.ipynb      # UI for Link Graph Extractor
-│   ├── link_prediction_ui.ipynb   # UI for GNN Link Prediction & Recommendation
-│   └── pagerank_ui.ipynb          # UI for PageRank & HITS Analysis (Newly added)
-├── src/                           # Core source code for the application
-│   ├── backend/                   # Backend logic for various functionalities
+├── data/                     # (This directory should typically be empty in the repo, used for runtime output)
+│   ├── link_graph_edges.csv  # Example of existing data files
+│   ├── prediction_model/
+│   │   └── model_metadata.json # Example of existing data files
+│   └── url_analysis_results.csv # Example of existing data files
+├── notebooks/                # Jupyter notebooks, each acting as a UI entry point
+│   ├── crawler_ui.ipynb      # UI for Content Crawler
+│   ├── embeddings_ui.ipynb   # UI for Embeddings Pipeline
+│   ├── link_crawler_ui.ipynb # UI for Link Graph Extractor
+│   ├── link_prediction_ui.ipynb # UI for GNN Link Prediction & Recommendation
+│   └── pagerank_ui.ipynb     # UI for PageRank & HITS Analysis (Newly added)
+├── src/                      # Core source code for the application
+│   ├── backend/              # Backend logic for various functionalities
 │   │   ├── __init__.py
-│   │   ├── config/                # Configuration settings for each module
+│   │   ├── config/           # Configuration settings for each module
 │   │   │   ├── __init__.py
 │   │   │   ├── crawler_config.py
 │   │   │   ├── embeddings_config.py
 │   │   │   ├── link_crawler_config.py
 │   │   │   ├── link_prediction_config.py
-│   │   │   └── pagerank_config.py     # Newly added
-│   │   ├── data/                  # Data loading, saving, and state management components
+│   │   │   └── pagerank_config.py
+│   │   ├── data/             # Data loading, saving, and state management components
 │   │   │   ├── __init__.py
-│   │   │   ├── repositories.py          # For Content Crawler state (SQLite)
+│   │   │   ├── repositories.py       # For Content Crawler state (SQLite)
 │   │   │   ├── embeddings_loader.py
 │   │   │   ├── embeddings_saver.py
 │   │   │   ├── embedding_state_manager.py
 │   │   │   ├── link_graph_repository.py # For Link Graph Extractor state (SQLite) & CSV saving
-│   │   │   ├── graph_dataloader.py      # For Link Prediction data loading
-│   │   │   └── graph_processor.py       # For Link Prediction data processing
-│   │   ├── graph/                 # Graph-specific algorithms and analysis
+│   │   │   ├── graph_dataloader.py     # For Link Prediction data loading
+│   │   │   └── graph_processor.py      # For Link Prediction data processing
+│   │   ├── graph/            # Graph-specific algorithms and analysis
 │   │   │   ├── __init__.py
-│   │   │   └── analyzer.py            # Newly added
-│   │   ├── models/                # Machine learning model definitions
+│   │   │   └── analyzer.py
+│   │   ├── models/           # Machine learning model definitions
 │   │   │   ├── __init__.py
-│   │   │   └── graph_models.py          # For GNN Link Prediction (GraphSAGE)
-│   │   ├── services/              # Orchestrators and core business logic for each module
+│   │   │   └── graph_models.py       # For GNN Link Prediction (GraphSAGE)
+│   │   ├── services/         # Orchestrators and core business logic for each module
 │   │   │   ├── __init__.py
 │   │   │   ├── crawler_service.py
 │   │   │   ├── embeddings_service.py
 │   │   │   ├── link_crawler_service.py
 │   │   │   ├── graph_training_service.py
 │   │   │   ├── recommendation_engine.py
-│   │   │   └── pagerank_service.py    # Newly added
-│   │   └── utils/                 # General utility functions
+│   │   │   └── pagerank_service.py
+│   │   └── utils/            # General utility functions
 │   │       ├── __init__.py
-│   │       ├── http.py                    # HTTP client utilities (reusable)
-│   │       ├── url.py                     # URL filtering/extraction for Content Crawler
-│   │       ├── link_url.py                # URL filtering/extraction for Link Graph Extractor
-│   │       ├── strategies.py              # Crawling strategies (BFS/DFS), generalized for both crawlers
-│   │       ├── text_processing.py         # Text extraction from HTML
-│   │       ├── embedding_generation.py    # Embedding model loading & generation
-│   │       └── url_processing.py          # URL path processing (e.g., folder depth)
-│   └── shared/                    # Components shared across frontend and backend
+│   │       ├── http.py             # HTTP client utilities (reusable)
+│   │       ├── url.py              # URL filtering/extraction for Content Crawler
+│   │       ├── link_url.py         # URL filtering/extraction for Link Graph Extractor
+│   │       ├── strategies.py       # Crawling strategies (BFS/DFS), generalized for both crawlers
+│   │       ├── text_processing.py      # Text extraction from HTML
+│   │       ├── embedding_generation.py # Embedding model loading & generation
+│   │       └── url_processing.py       # URL path processing (e.g., folder depth)
+│   └── shared/               # Components shared across frontend and backend
 │       ├── __init__.py
-│       ├── interfaces.py          # Abstract interfaces (e.g., ILogger)
-│       └── logging_config.py      # Standardized logging setup
+│       ├── interfaces.py     # Abstract interfaces (e.g., ILogger)
+│       └── logging_config.py # Standardized logging setup
+├── tests/                    # <-- NEW: Top-level directory for all tests
+│   ├── backend/
+│   │   ├── services/
+│   │   │   └── test_crawler_service.py 
+│   │   └── __init__.py       
+│   └── __init__.py           
 ├── LICENSE
 ├── README.md
-├── requirements.txt               # All required Python packages
-└── technical_report/              # Placeholder for documentation
+├── requirements.txt
+└── technical_report/         # Placeholder for documentation
+    └── WebKnoGraph_Technical_Report.pdf
 ```
 ---
 

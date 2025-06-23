@@ -18,7 +18,7 @@ The project is organized into a modular structure to promote maintainability, re
 
 ```
 WebKnoGraph/  (Your project root)
-├── assets/                   # Project assets (images, etc.)
+├── assets/             # Project assets (images, etc.)
 │   ├── 01_crawler.png
 │   ├── 02_embeddings.png
 │   ├── 03_link_graph.png
@@ -28,19 +28,19 @@ WebKnoGraph/  (Your project root)
 │   ├── WL_logo.png
 │   ├── fcse_logo.png
 │   └── kalicube.com.png
-├── data/                     # (This directory should typically be empty in the repo, used for runtime output)
+├── data/               # (This directory should typically be empty in the repo, used for runtime output)
 │   ├── link_graph_edges.csv  # Example of existing data files
 │   ├── prediction_model/
 │   │   └── model_metadata.json # Example of existing data files
 │   └── url_analysis_results.csv # Example of existing data files
-├── notebooks/                # Jupyter notebooks, each acting as a UI entry point
+├── notebooks/          # Jupyter notebooks, each acting as a UI entry point
 │   ├── crawler_ui.ipynb      # UI for Content Crawler
 │   ├── embeddings_ui.ipynb   # UI for Embeddings Pipeline
 │   ├── link_crawler_ui.ipynb # UI for Link Graph Extractor
 │   ├── link_prediction_ui.ipynb # UI for GNN Link Prediction & Recommendation
 │   └── pagerank_ui.ipynb     # UI for PageRank & HITS Analysis (Newly added)
-├── src/                      # Core source code for the application
-│   ├── backend/              # Backend logic for various functionalities
+├── src/                # Core source code for the application
+│   ├── backend/        # Backend logic for various functionalities
 │   │   ├── __init__.py
 │   │   ├── config/           # Configuration settings for each module
 │   │   │   ├── __init__.py
@@ -81,19 +81,20 @@ WebKnoGraph/  (Your project root)
 │   │       ├── text_processing.py      # Text extraction from HTML
 │   │       ├── embedding_generation.py # Embedding model loading & generation
 │   │       └── url_processing.py       # URL path processing (e.g., folder depth)
-│   └── shared/               # Components shared across frontend and backend
+│   └── shared/         # Components shared across frontend and backend
 │       ├── __init__.py
 │       ├── interfaces.py     # Abstract interfaces (e.g., ILogger)
 │       └── logging_config.py # Standardized logging setup
-├── tests/                    # Top-level directory for all unit tests
-│   ├── backend/              # Mirrors src/backend
-│   │   ├── services/         # Mirrors src/backend/services
-│   │   │   ├── test_crawler_service.py          # Unit tests for crawler_service
-│   │   │   ├── test_embeddings_service.py       # Unit tests for embeddings_service
-│   │   │   ├── test_link_crawler_service.py     # Unit tests for link_crawler_service
-│   │   │   └── test_graph_training_service.py   # Unit tests for graph_training_service
+├── tests/              # Top-level directory for all unit tests
+│   ├── backend/        # Mirrors src/backend
+│   │   ├── services/       # Mirrors src/backend/services
+│   │   │   ├── test_crawler_service.py       # Unit tests for crawler_service
+│   │   │   ├── test_embeddings_service.py      # Unit tests for embeddings_service
+│   │   │   ├── test_link_crawler_service.py      # Unit tests for link_crawler_service
+│   │   │   ├── test_graph_training_service.py    # Unit tests for graph_training_service
+│   │   │   └── test_pagerank_service.py          # Unit tests for pagerank_service (Newly added)
 │   │   └── __init__.py       # Makes 'services' a Python package
-│   └── __init__.py           # Makes 'backend' a Python package
+│   └── __init__.py         # Makes 'backend' a Python package
 ├── .github/
 │   └── workflows/
 │       └── python_tests.yaml # GitHub Actions workflow for automated tests

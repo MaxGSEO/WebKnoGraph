@@ -2,7 +2,6 @@ import unittest
 from unittest.mock import MagicMock, patch
 import pandas as pd  # Changed back to 'import pandas as pd' for consistency with your intended global change
 import numpy as np
-from datetime import datetime
 
 # Import the class to be tested and its dependencies
 from src.backend.services.embeddings_service import EmbeddingPipeline

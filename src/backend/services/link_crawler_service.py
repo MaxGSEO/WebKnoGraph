@@ -1,6 +1,6 @@
 # File: src/backend/services/link_crawler_service.py
 import gc
-import fireducks.pandas as pd  # Using fireducks.pandas as specified
+import pandas as pd
 from urllib.parse import urlparse
 from tqdm import tqdm
 

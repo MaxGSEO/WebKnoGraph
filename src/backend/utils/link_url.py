@@ -44,7 +44,4 @@ class LinkExtractorForEdges:
             normalized_link = self.normalize_url(absolute_link)
             if self.url_filter.is_valid_for_crawling(normalized_link):
                 links.add(normalized_link)
-            return links  # Fix: This return should be outside the loop.
-        # This return statement was in the wrong place in the original code,
-        # causing it to return after the first link. It should be here:
         return links

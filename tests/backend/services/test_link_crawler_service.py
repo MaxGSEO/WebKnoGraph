@@ -1,8 +1,6 @@
 import unittest
 from unittest.mock import MagicMock, patch
 import pandas as pd  # Using standard pandas as per your global change
-import numpy as np  # Keep if any mock might return numpy arrays, otherwise can remove
-from datetime import datetime
 from urllib.parse import urlparse  # Needed for URL path comparisons in tests
 
 # Import the class to be tested and its dependencies
@@ -11,7 +9,6 @@ from src.backend.config.link_crawler_config import LinkCrawlerConfig
 from src.backend.data.link_graph_repository import LinkGraphStateManager
 from src.backend.utils.strategies import (
     CrawlingStrategy,
-    VisitedUrlManager,
 )  # Need VisitedUrlManager for accurate mock setup
 from src.backend.utils.http import HttpClient
 from src.backend.utils.link_url import (

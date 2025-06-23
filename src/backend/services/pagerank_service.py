@@ -1,7 +1,6 @@
 # File: src/backend/services/pagerank_service.py
 import os
 import pandas as pd
-import fireducks.pandas as fpd
 from src.shared.interfaces import ILogger
 from src.backend.config.pagerank_config import PageRankConfig  # Ensure this is correct
 from src.backend.utils.url_processing import URLProcessor
@@ -16,11 +15,11 @@ class CSVLoader:
     def __init__(self, file_path: str):
         self.file_path = file_path
 
-    def load_data(self) -> fpd.DataFrame:
+    def load_data(self) -> pd.DataFrame:
         if not os.path.exists(self.file_path):
             raise FileNotFoundError(f"CSV file not found at: {self.file_path}")
         try:
-            dataframe = fpd.read_csv(self.file_path)
+            dataframe = pd.read_csv(self.file_path)
             if dataframe.empty:
                 raise ValueError(f"CSV file at {self.file_path} is empty.")
             return dataframe
@@ -72,8 +71,8 @@ class PageRankService:
                 f"Attempting to load PageRank data from {self.config.output_analysis_path}"
             )
             pagerank_loader = CSVLoader(self.config.output_analysis_path)
-            fpd_pagerank_df = pagerank_loader.load_data()
-            temp_pagerank_df = fpd_pagerank_df.to_pandas()
+            pd_pagerank_df = pagerank_loader.load_data()
+            temp_pagerank_df = pd_pagerank_df
 
             required_cols_pagerank = ["URL", "Folder_Depth", "PageRank"]
             if not all(
@@ -127,8 +126,8 @@ class PageRankService:
                 f"Attempting to load Link Graph data from {self.config.input_edge_list_path}"
             )
             link_graph_loader = CSVLoader(self.config.input_edge_list_path)
-            fpd_link_graph_df = link_graph_loader.load_data()
-            temp_link_graph_df = fpd_link_graph_df.to_pandas()
+            pd_link_graph_df = link_graph_loader.load_data()
+            temp_link_graph_df = pd_link_graph_df
 
             required_cols_link_graph = ["FROM", "TO"]
             if not all(

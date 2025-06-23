@@ -55,9 +55,9 @@ WebKnoGraph/  (Your project root)
 │   │   │   ├── embeddings_loader.py
 │   │   │   ├── embeddings_saver.py
 │   │   │   ├── embedding_state_manager.py
-│   │   │   ├── link_graph_repository.py # For Link Graph Extractor state (SQLite) & CSV saving
 │   │   │   ├── graph_dataloader.py     # For Link Prediction data loading
-│   │   │   └── graph_processor.py      # For Link Prediction data processing
+│   │   │   ├── graph_processor.py      # For Link Prediction data processing
+│   │   │   └── link_graph_repository.py # For Link Graph Extractor state (SQLite) & CSV saving
 │   │   ├── graph/            # Graph-specific algorithms and analysis
 │   │   │   ├── __init__.py
 │   │   │   └── analyzer.py
@@ -68,10 +68,10 @@ WebKnoGraph/  (Your project root)
 │   │   │   ├── __init__.py
 │   │   │   ├── crawler_service.py
 │   │   │   ├── embeddings_service.py
-│   │   │   ├── link_crawler_service.py
 │   │   │   ├── graph_training_service.py
-│   │   │   ├── recommendation_engine.py
-│   │   │   └── pagerank_service.py
+│   │   │   ├── link_crawler_service.py
+│   │   │   ├── pagerank_service.py
+│   │   │   └── recommendation_engine.py
 │   │   └── utils/            # General utility functions
 │   │       ├── __init__.py
 │   │       ├── http.py             # HTTP client utilities (reusable)
@@ -85,12 +85,18 @@ WebKnoGraph/  (Your project root)
 │       ├── __init__.py
 │       ├── interfaces.py     # Abstract interfaces (e.g., ILogger)
 │       └── logging_config.py # Standardized logging setup
-├── tests/                    # <-- NEW: Top-level directory for all tests
-│   ├── backend/
-│   │   ├── services/
-│   │   │   └── test_crawler_service.py
-│   │   └── __init__.py
-│   └── __init__.py
+├── tests/                    # Top-level directory for all unit tests
+│   ├── backend/              # Mirrors src/backend
+│   │   ├── services/         # Mirrors src/backend/services
+│   │   │   ├── test_crawler_service.py          # Unit tests for crawler_service
+│   │   │   ├── test_embeddings_service.py       # Unit tests for embeddings_service
+│   │   │   ├── test_link_crawler_service.py     # Unit tests for link_crawler_service
+│   │   │   └── test_graph_training_service.py   # Unit tests for graph_training_service
+│   │   └── __init__.py       # Makes 'services' a Python package
+│   └── __init__.py           # Makes 'backend' a Python package
+├── .github/
+│   └── workflows/
+│       └── python_tests.yaml # GitHub Actions workflow for automated tests
 ├── LICENSE
 ├── README.md
 ├── requirements.txt

@@ -2,7 +2,7 @@ import unittest
 import torch
 import torch.optim as optim
 import torch.nn as nn
-from unittest.mock import Mock, patch, call, MagicMock, ANY
+from unittest.mock import Mock, patch, MagicMock
 
 # --- Original Source Code (made self-contained for the test file) ---
 

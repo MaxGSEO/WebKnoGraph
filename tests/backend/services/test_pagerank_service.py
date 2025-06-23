@@ -3,7 +3,7 @@
 import unittest
 import os
 import pandas as pd
-from unittest.mock import MagicMock, patch, ANY, call  # Import ANY and call
+from unittest.mock import MagicMock, patch, ANY  # Import ANY and call
 import tempfile
 import pandas.errors  # Import for specific pandas exceptions
 
@@ -12,7 +12,6 @@ import pandas.errors  # Import for specific pandas exceptions
 from src.backend.services.pagerank_service import CSVLoader, PageRankService
 from src.shared.interfaces import ILogger
 from src.backend.config.pagerank_config import PageRankConfig
-from src.backend.utils.url_processing import URLProcessor
 from src.backend.graph.analyzer import PageRankGraphAnalyzer, HITSGraphAnalyzer
 
 

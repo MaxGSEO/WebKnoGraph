@@ -1,4 +1,4 @@
-# WebKnoGraph [under construction 👷‍♀️]
+# WebKnoGraph [👀 it out]
 
 Revolutionizing website internal linking by leveraging cutting-edge data processing techniques, vector embeddings, and graph-based link prediction algorithms. By combining these advanced technologies and methodologies, the project aims to create an intelligent solution that optimizes internal link structures, enhancing both SEO performance and user navigation.
 
@@ -8,7 +8,7 @@ We're enabling **the first publicly available and transparent research for acade
 
 **Note:** At this stage, a better separation of frontend, backend, and data logic has been implemented. This `README.md` reflects that modular structure.
 
-**TO-DOs:** Manual testing confirms module stability. Full automation is planned for Q4 2025.
+**TO-DOs:** Manual testing confirms module stability and initial tests are provided. Deep test automation is planned for Q4 2025.
 
 ---
 
@@ -124,7 +124,7 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 
 ---
 
-# 📷 Apps Images
+# 📷 Apps UIs
 
 ## 1. WebKnoGraph Crawler
 ![WebKnoGraph Crawler](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/01_crawler.png)

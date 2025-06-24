@@ -1,7 +1,7 @@
 import os
 import gc
 import time
-import fireducks.pandas as pd
+import pandas as pd
 from datetime import datetime
 from tqdm import tqdm
 

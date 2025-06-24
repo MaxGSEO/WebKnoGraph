@@ -1,7 +1,7 @@
 # File: src/backend/data/link_graph_repository.py
 import sqlite3
 import os
-import fireducks.pandas as pd  # Using fireducks.pandas as specified
+import pandas as pd
 from src.shared.interfaces import ILogger
 
 

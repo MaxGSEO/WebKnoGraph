@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import MagicMock, patch
-import pandas as pd  # Changed back to 'import pandas as pd' for consistency with your intended global change
+import pandas as pd
 import numpy as np
 
 # Import the class to be tested and its dependencies

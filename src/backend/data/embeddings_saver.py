@@ -1,6 +1,6 @@
 import os
 import time
-import fireducks.pandas as pd  # Using fireducks.pandas as specified
+import pandas as pd
 from src.shared.interfaces import ILogger
 
 

@@ -1,6 +1,6 @@
 import os
 import duckdb
-import fireducks.pandas as pd  # Using fireducks.pandas as specified
+import pandas as pd
 from src.shared.interfaces import ILogger
 
 
@@ -39,7 +39,7 @@ class DataLoader:
         self.logger.info("Querying for new pages to process...")
         try:
             for batch in self.con.execute(final_query).fetch_record_batch(batch_size):
-                yield batch.to_pandas()
+                yield batch
         except Exception as e:
             self.logger.error(
                 f"Could not query Parquet files. Please check the input path: {e}"

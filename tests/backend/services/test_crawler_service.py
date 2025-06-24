@@ -1,6 +1,9 @@
 import unittest
 from unittest.mock import MagicMock, patch
 from datetime import datetime
+import pandas as pd
+import os
+import time # Import time for the mocked time.time
 
 # Adjust import paths as necessary based on your project structure
 from src.backend.services.crawler_service import WebCrawler
@@ -8,7 +11,7 @@ from src.backend.config.crawler_config import CrawlerConfig
 from src.backend.utils.strategies import CrawlingStrategy
 from src.backend.data.repositories import (
     CrawlStateRepository,
-)  # Renamed from StateManager
+)
 from src.backend.utils.http import HttpClient
 from src.backend.utils.url import UrlFilter, LinkExtractor
 from src.shared.interfaces import ILogger
@@ -95,11 +98,11 @@ class TestWebCrawler(unittest.TestCase):
 
     def test_process_url_max_redirects_reached(self):
         test_url = "http://example.com/redirect_loop"
-        self.mock_config.max_redirects = 1  # Set max redirects for this specific test
+        self.mock_config.max_redirects = 1
 
         self.crawler._process_url((test_url, self.mock_config.max_redirects))
 
-        self.mock_http_client.fetch.assert_not_called()  # Should not fetch if max redirects reached
+        self.mock_http_client.fetch.assert_not_called()
         self.mock_logger.info.assert_not_called()
         self.assertEqual(len(self.crawler.data_buffer), 1)
         self.assertEqual(self.crawler.data_buffer[0]["URL"], test_url)
@@ -117,7 +120,7 @@ class TestWebCrawler(unittest.TestCase):
 
         self.mock_http_client.fetch.assert_called_once_with(test_url)
         self.mock_logger.info.assert_called_with(f"Fetched {test_url} [301]")
-        self.mock_link_extractor.extract_links.assert_not_called()  # No content to extract
+        self.mock_link_extractor.extract_links.assert_not_called()
         self.mock_crawling_strategy.add_links.assert_called_once_with(
             [(redirect_to_url, 1)]
         )
@@ -132,7 +135,7 @@ class TestWebCrawler(unittest.TestCase):
             500,
             "",
             None,
-        )  # Simulate server error
+        )
 
         self.crawler._process_url((test_url, 0))
 
@@ -146,9 +149,9 @@ class TestWebCrawler(unittest.TestCase):
         self.assertEqual(self.crawler.data_buffer[0]["Content"], "")
 
     # --- Test Cases for _save_buffer_to_parquet ---
-    @patch("fireducks.pandas.DataFrame.to_parquet")
+    @patch("pandas.DataFrame.to_parquet")
     @patch("os.makedirs")
-    @patch("time.time", return_value=1234567890.0)  # Mock time for consistent filename
+    @patch("time.time", return_value=1234567890.0)
     def test_save_buffer_to_parquet_success(
         self, mock_time, mock_makedirs, mock_to_parquet
     ):
@@ -156,24 +159,35 @@ class TestWebCrawler(unittest.TestCase):
             {"URL": "url1", "Status_Code": 200, "Content": "content1"},
             {"URL": "url2", "Status_Code": 200, "Content": "content2"},
         ]
-        expected_log_message = f"✅ Saved a batch of **2** pages to partition `{self.mock_config.parquet_path}/crawl_date={datetime.now().date()}`"
+        expected_partition_path = os.path.join(self.mock_config.parquet_path, f"crawl_date={datetime.now().date()}")
+        expected_log_message = f"✅ Saved a batch of **2** pages to partition `{expected_partition_path}`"
+        expected_file_path = os.path.join(expected_partition_path, f"{int(mock_time.return_value)}.parquet")
+
 
         result = self.crawler._save_buffer_to_parquet()
 
-        mock_makedirs.assert_called_once()
-        mock_to_parquet.assert_called_once()
+        mock_makedirs.assert_called_once_with(
+            expected_partition_path,
+            exist_ok=True
+        )
+        # Assert that to_parquet was called with the correct path and other args
+        mock_to_parquet.assert_called_once_with(
+            path=expected_file_path,
+            engine="pyarrow",
+            compression="snappy",
+        )
         self.mock_logger.info.assert_called_with(expected_log_message)
-        self.assertEqual(self.crawler.data_buffer, [])  # Buffer should be cleared
+        self.assertEqual(self.crawler.data_buffer, [])
         self.assertEqual(result, expected_log_message)
 
     def test_save_buffer_to_parquet_empty_buffer(self):
         self.crawler.data_buffer = []
         result = self.crawler._save_buffer_to_parquet()
         self.assertIsNone(result)
-        self.mock_logger.info.assert_not_called()  # No save, no log message
+        self.mock_logger.info.assert_not_called()
         self.mock_logger.error.assert_not_called()
 
-    @patch("fireducks.pandas.DataFrame.to_parquet", side_effect=Exception("Disk Full"))
+    @patch("pandas.DataFrame.to_parquet", side_effect=Exception("Disk Full"))
     @patch("os.makedirs")
     @patch("time.time", return_value=1234567890.0)
     def test_save_buffer_to_parquet_failure(
@@ -189,19 +203,14 @@ class TestWebCrawler(unittest.TestCase):
         )
         self.assertEqual(
             len(self.crawler.data_buffer), 1
-        )  # Buffer should not be cleared on failure
+        )
 
     # --- Test Cases for crawl ---
     def test_crawl_finishes_when_max_pages_reached(self):
         # Configure mocks for crawl loop
         self.mock_crawling_strategy.has_next.side_effect = [
-            True,
-            True,
-            True,
-            True,
-            True,
-            False,
-        ]  # Allows 5 pages to be crawled
+            True, True, True, True, True, False,
+        ]
         self.mock_crawling_strategy.get_next.side_effect = [
             ("http://example.com/p1", 0),
             ("http://example.com/p2", 0),
@@ -211,11 +220,8 @@ class TestWebCrawler(unittest.TestCase):
         ]
         self.mock_http_client.fetch.return_value = (200, "content", None)
         self.mock_config.max_pages_to_crawl = 5
-        self.mock_config.save_interval_pages = (
-            1  # Save after every page for simplicity in test
-        )
+        self.mock_config.save_interval_pages = 1
 
-        # Mock saving to parquet to avoid file system ops
         with patch.object(
             self.crawler, "_save_buffer_to_parquet", return_value="Save message"
         ) as mock_save:
@@ -225,36 +231,28 @@ class TestWebCrawler(unittest.TestCase):
             self.assertEqual(self.mock_crawling_strategy.get_next.call_count, 5)
             self.assertEqual(
                 self.mock_state_repository.save_frontier.call_count, 6
-            )  # 5 intermediate saves + 1 final save
+            )
             self.assertEqual(mock_save.call_count, 6)
-            # Corrected assertion: logger is called with "Crawl finished. Performing final save..."
             self.mock_logger.info.assert_any_call(
                 "Crawl finished. Performing final save..."
             )
-            # This assertion is now removed as the message is yielded, not logged.
-            # self.mock_logger.info.assert_any_call("Crawl finished. Processed 5 pages.")
 
-            # Verify the yielded statuses
             self.assertEqual(results[0]["status"], "Crawled 1/5 pages.")
             self.assertEqual(results[4]["status"], "Crawled 5/5 pages.")
             self.assertEqual(
                 results[5]["status"], "Crawl finished. Processed 5 pages."
-            )  # This correctly checks the yielded message
+            )
 
     def test_crawl_finishes_when_frontier_empty(self):
         self.mock_crawling_strategy.has_next.side_effect = [
-            True,
-            True,
-            False,
-        ]  # Allows 2 pages, then empty
+            True, True, False,
+        ]
         self.mock_crawling_strategy.get_next.side_effect = [
             ("http://example.com/a", 0),
             ("http://example.com/b", 0),
         ]
         self.mock_http_client.fetch.return_value = (200, "content", None)
-        self.mock_config.max_pages_to_crawl = (
-            10  # Set higher than actual crawled to test empty frontier
-        )
+        self.mock_config.max_pages_to_crawl = 10
         self.mock_config.save_interval_pages = 1
 
         with patch.object(
@@ -268,7 +266,6 @@ class TestWebCrawler(unittest.TestCase):
             self.assertEqual(self.mock_state_repository.save_frontier.call_count, 3)
             self.assertEqual(mock_save.call_count, 3)
 
-            # Verify the yielded statuses
             self.assertEqual(results[0]["status"], "Crawled 1/10 pages.")
             self.assertEqual(results[1]["status"], "Crawled 2/10 pages.")
             self.assertEqual(results[2]["status"], "Crawl finished. Processed 2 pages.")

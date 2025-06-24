@@ -300,11 +300,11 @@ To execute all unit tests located within the tests/backend/services/ directory a
 ### Understanding the Output
 
 *   **python -m unittest**: This part invokes the unittest module as a script.
-    
+
 *   **discover**: This command tells unittest to search for and load all test cases.
-    
+
 *   **tests/backend/services/**: This specifies the starting directory for the test discovery process. unittest will look for any file whose name begins with test (e.g., test\_crawler\_service.py, test\_pagerank\_service.py) within this directory and any subdirectories, and then run all test methods found within the unittest.TestCase classes in those files.
-    
+
 
 A successful test run will typically show a series of dots (.) indicating passed tests. If any tests fail (F) or encounter errors (E), they will be clearly marked, and a summary of the failures/errors will be provided at the end of the output.
 

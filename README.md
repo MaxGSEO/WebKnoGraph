@@ -289,6 +289,33 @@ General Steps for Each Notebook:
 
 **Important Note:** After training, you must select a specific URL from the dropdown in the "Get Link Recommendations" tab for recommendations to be generated. Do not use the placeholder message.
 
+## 6. Running All Tests in Your Project
+
+To execute all unit tests located within the tests/backend/services/ directory and its subdirectories, navigate to the root of your WebKnoGraph project in your terminal. Once there, you can use Python's built-in unittest module with its discover command:
+
+```bash
+   python -m unittest discover tests/backend/services/
+   ```
+
+### Understanding the Output
+
+*   **python -m unittest**: This part invokes the unittest module as a script.
+    
+*   **discover**: This command tells unittest to search for and load all test cases.
+    
+*   **tests/backend/services/**: This specifies the starting directory for the test discovery process. unittest will look for any file whose name begins with test (e.g., test\_crawler\_service.py, test\_pagerank\_service.py) within this directory and any subdirectories, and then run all test methods found within the unittest.TestCase classes in those files.
+    
+
+A successful test run will typically show a series of dots (.) indicating passed tests. If any tests fail (F) or encounter errors (E), they will be clearly marked, and a summary of the failures/errors will be provided at the end of the output.
+
+### Example of Successful Test Output
+
+![GitHub Actions Test Validation](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/test_completed_1.png)
+
+![Bash Test Validation](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/test_completed_2.png)
+
+This output confirms that all tests in the tests/backend/services/ directory were found and executed, and the final summary will indicate if all of them passed successfully.
+
 ---
 
 # ⚠️ Troubleshooting Tips

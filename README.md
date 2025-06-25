@@ -410,6 +410,12 @@ Beyond code, Emilija’s background in marketing technology and ontology enginee
 
 In her free time, Emilija co-leads [**Women in AI & Digital DACH**](https://www.linkedin.com/company/womeninaianddigital/), a community committed to increasing visibility and opportunity for women shaping the future of AI and digital work across the DACH region.
 
+## 📊 GitHub Stats
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=martech-engineer&show_icons=true&theme=default&hide=issues&count_private=true)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=martech-engineer&layout=compact)
+
 <div align="left">
 
 # ☕ Support Future Work

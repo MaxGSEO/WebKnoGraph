@@ -17,7 +17,7 @@ We're enabling **the first publicly available and transparent research for acade
 </h1>
 
 <h3 align="center">
-    <a href="#️getting-started">Getting Started</a> &bull;
+    <a href="https://github.com/martech-engineer/WebKnoGraph#%EF%B8%8F-getting-started">Getting Started</a> &bull;
     <a href="#️setup-and-running">Setup</a> &bull;
     <a href="#️troubleshooting-tips">Troubleshooting</a> &bull;
     <a href="#️product-roadmap">Roadmap</a> &bull;

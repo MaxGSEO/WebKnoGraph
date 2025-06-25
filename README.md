@@ -124,7 +124,7 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 
 ---
 
-# 📷 Apps UIs
+# 📷 App UIs
 
 ## 1. WebKnoGraph Crawler
 ![WebKnoGraph Crawler](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/01_crawler.png)

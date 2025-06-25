@@ -347,7 +347,7 @@ This output confirms that all tests in the tests/backend/services/ directory wer
 
 This roadmap outlines the planned feature development and research milestones for WebKnoGraph across upcoming quarters. It is organized around key strategic themes: algorithmic enhancements, deployment and testing, user interface customization, and performance diagnostics. Each milestone reflects a step toward building a robust, AI-driven system for optimizing internal linking at scale.
 
-![Product Roadmap](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/product_roadmap.png)
+![Product Roadmap](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/product_roadmap_fixed.png)
 
 ---
 # 🤝 Contributing

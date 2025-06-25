@@ -392,7 +392,7 @@ Use the code. Improve the methods. Share what you learn.
 
 This interactive calculator estimates the potential **cost savings and ROI** from optimizing internal links, based on your keyword data, CPC benchmarks, and click-through assumptions.
 
-[![Try the Internal Linking SEO ROI Calculator](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/internal-linking-seo-roi.png?raw=true)](https://huggingface.co/spaces/Em4e/internal-linking-seo-roi-calculator)
+[![Try the Internal Linking SEO ROI Calculator](https://raw.githubusercontent.com/martech-engineer/WebKnoGraph/refs/heads/main/assets/internal-linking-seo-roi-cropped.png)](https://huggingface.co/spaces/Em4e/internal-linking-seo-roi-calculator)
 
 ---
 

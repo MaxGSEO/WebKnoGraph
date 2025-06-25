@@ -19,7 +19,7 @@ We're enabling **the first publicly available and transparent research for acade
 <h3 align="center">
     <a href="#-target-reading-audience">Target Audience</a> &bull;
     <a href="#-sponsors">Sponsors</a> &bull;
-    <a href="#️-getting-started">Getting Started</a> &bull;
+    <a href="#️-getting-started">Getting Started</a> &bull; <br>
     <a href="#-app-uis">App UIs</a> &bull;
     <a href="#%EF%B8%8F-product-roadmap">Product Roadmap</a> &bull;
     <a href="#-license">License</a> &bull;

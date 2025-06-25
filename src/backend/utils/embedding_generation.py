@@ -15,7 +15,7 @@ class EmbeddingGenerator:
     def __init__(self, model_name: str, logger: ILogger):
         self.logger = logger
         self.logger.info(f"Loading embedding model: {model_name}...")
-        self.model = SentenceTransformer(model_name)
+        self.model = SentenceTransformer(model_name, trust_remote_code=True)
         self.logger.info("Model loaded successfully.")
 
     def generate(self, texts: list[str]) -> np.ndarray:

@@ -23,7 +23,7 @@ We're enabling **the first publicly available and transparent research for acade
     <a href="#-app-uis">App UIs</a> &bull;
     <a href="#%EF%B8%8F-product-roadmap">Product Roadmap</a> &bull;
     <a href="#-license">License</a> &bull;
-    <a href="#-about-the-creator">About the Creator</a> 
+    <a href="#-about-the-creator">About the Creator</a>
 </h3>
 
 

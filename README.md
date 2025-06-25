@@ -12,6 +12,21 @@ We're enabling **the first publicly available and transparent research for acade
 
 ---
 
+<h1 align="center">
+    Quick Tour
+</h1>
+
+<h3 align="center">
+    <a href="#️getting-started">Getting Started</a> &bull;
+    <a href="#️setup-and-running">Setup</a> &bull;
+    <a href="#️troubleshooting-tips">Troubleshooting</a> &bull;
+    <a href="#️product-roadmap">Roadmap</a> &bull;
+    <a href="#️internal-linking-calculator">Calculator</a> &bull;
+    <a href="#️about-the-creator">Creator</a> &bull;
+    <a href="#️support-future-work">Support</a>
+</h3>
+
+
 
 
 ---

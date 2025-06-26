@@ -8,7 +8,7 @@ We're enabling **the first publicly available and transparent research for acade
 
 **Note:** At this stage, a better separation of frontend, backend, test and data logic has been implemented.
 
-### ✅ TO-DOs
+## ✅ TO-DOs
 
 - [x] Manual testing confirms module stability
 - [x] Initial test cases are provided
@@ -29,9 +29,6 @@ We're enabling **the first publicly available and transparent research for acade
     <a href="#-license">License</a> &bull;
     <a href="#-about-the-creator">About the Creator</a>
 </h3>
-
-
-
 
 ---
 
@@ -128,11 +125,11 @@ WebKnoGraph/  (Your project root)
     └── WebKnoGraph_Technical_Report.pdf
 ```
 
-### Starting a Fresh Crawl
+## Starting a Fresh Crawl
 
 To begin a new crawl for a different website, delete the entire `data/` folder. This directory stores all intermediate and final outputs from the previous crawl session. Removing it ensures a clean start without residual data interfering.
 
-#### Contents of the `data/` Directory
+### Contents of the `data/` Directory
 
 | Path | Description |
 |------|-------------|

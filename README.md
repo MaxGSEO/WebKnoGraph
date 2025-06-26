@@ -127,6 +127,25 @@ WebKnoGraph/  (Your project root)
 └── technical_report/         # Placeholder for documentation
     └── WebKnoGraph_Technical_Report.pdf
 ```
+
+### Starting a Fresh Crawl
+
+To begin a new crawl for a different website, delete the entire `data/` folder. This directory stores all intermediate and final outputs from the previous crawl session. Removing it ensures a clean start without residual data interfering.
+
+#### Contents of the `data/` Directory
+
+| Path | Description |
+|------|-------------|
+| `data/` | Root folder for all crawl-related data and model artifacts. |
+| `data/link_graph_edges.csv` | Stores inter-page hyperlinks, forming the basis of the internal link graph. |
+| `data/url_analysis_results.csv` | Contains extracted structural features such as PageRank and folder depth per URL. |
+| `data/crawled_data_parquet/` | Directory for the raw HTML content captured by the crawler in Parquet format. |
+| `data/crawler_state.db` | SQLite database that maintains the crawl state to support resume capability. |
+| `data/url_embeddings/` | Holds vector embeddings representing the semantic content of each URL. |
+| `data/prediction_model/` | Includes the trained GraphSAGE model and metadata for link prediction. |
+
+For additional details about how this fits into the full project workflow, refer to the [Project Structure](#-project-structure) section of the README.
+
 ---
 
 # 💪 Sponsors

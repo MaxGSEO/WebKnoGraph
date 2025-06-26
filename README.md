@@ -1,6 +1,4 @@
-<h1 align="center">
-    WebKnoGraph
-</h1>
+![WebKnoGraph](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/WebKnoGraph.png)
 
 <div align="center" style="color:gold;"><strong>Don't forget to give a ⭐ if you found this helpful.</strong></div><br>
 

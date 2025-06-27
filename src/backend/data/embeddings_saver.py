@@ -23,7 +23,6 @@ class DataSaver:
 
         # Check if the file exists to decide whether to write a new file or append
         if not os.path.exists(self.output_file):
-            mode = "w"
             self.logger.info(f"Creating new Parquet file: {self.output_file}")
             pq.write_table(table, self.output_file)
         else:

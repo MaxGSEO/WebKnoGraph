@@ -177,11 +177,11 @@ Without the contributions from these amazing sponsors, WebKnoGraph would not hav
 ## 4. GNN Model Trainer
 ![Train GNN Algo](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/04_graphsage_01.png)
 
-## 5. Link Prediction Engine
-![Link Prediction Engine](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/04_graphsage_02.png)
-
-## 6. HITS and PageRank URL Sorter
+## 5. HITS and PageRank URL Sorter
 ![HITS and PageRank Sorted URLs](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/06_HITS_PageRank_Sorted_URLs.png)
+
+## 6. Link Prediction Engine
+![Link Prediction Engine](https://github.com/martech-engineer/WebKnoGraph/blob/main/assets/04_graphsage_02.png)
 
 ---
 

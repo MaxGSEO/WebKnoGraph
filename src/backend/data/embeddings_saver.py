@@ -20,7 +20,7 @@ class DataSaver:
             return
 
         table = pa.Table.from_pandas(df_batch, preserve_index=False)
-        
+
         # Check if the file exists to decide whether to write a new file or append
         if not os.path.exists(self.output_file):
             mode = "w"
@@ -40,4 +40,6 @@ class DataSaver:
                 # Here we just log the error and let it fail to avoid data corruption.
                 raise
 
-        self.logger.info(f"Appended batch of {len(df_batch)} embeddings to {self.output_file}")
+        self.logger.info(
+            f"Appended batch of {len(df_batch)} embeddings to {self.output_file}"
+        )

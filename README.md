@@ -319,7 +319,7 @@ General Steps for Each Notebook:
 * **Default Output:** `/content/drive/My Drive/WebKnoGraph/data/prediction_model/`
 * **Important Note:** After training, you must select a specific URL from the dropdown in the "Get Link Recommendations" tab for recommendations to be generated. Do not use the placeholder message.
 
-**5.5. PageRank & HITS Analysis**
+5.5. PageRank & HITS Analysis
 
 * **Notebook:** `notebooks/pagerank_ui.ipynb`
 * **Purpose:** Calculate PageRank and HITS scores for URLs based on the link graph, and analyze folder depths.
